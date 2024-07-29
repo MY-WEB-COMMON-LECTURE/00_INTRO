@@ -62,7 +62,7 @@ td,th{
 .wrapper>main>aside{
     width : 5vw;
     min-width:35px;
-    height : 250px;
+    height : auto;
     border-radius: 3px;
     padding : 5px;
    
@@ -91,7 +91,7 @@ td,th{
 
     position:absolute;
     left:0;
-    top:-20px;
+    top:-25px;
     display:block;
     width : 100%;
     font-size:.8rem;
