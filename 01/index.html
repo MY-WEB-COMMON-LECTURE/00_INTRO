@@ -241,6 +241,11 @@ varying float vBright;\n\
       var posZ = 1700; //distance to camera
       //scene.position.set(-12,54,0);
 
+      // Add zoom variables
+      var minDistance = 1000;
+      var maxDistance = 3000;
+      var zoomSpeed = 0.1;
+
       //camera.position.y=camera.position.z=2000
 
       scene.fog = new THREE.Fog(fogC, posZ - R / 2, posZ + R);
@@ -334,6 +339,19 @@ varying float vBright;\n\
             //console.log()
             interact();
           };
+
+      // Add zoom event listener
+      window.addEventListener('wheel', function(event) {
+        // Calculate new distance
+        posZ += event.deltaY * zoomSpeed;
+        
+        // Clamp distance between min and max
+        posZ = Math.max(minDistance, Math.min(maxDistance, posZ));
+        
+        // Update fog
+        scene.fog.near = posZ - R / 2;
+        scene.fog.far = posZ + R;
+      });
 
       var t0 = new Date() * 1,
         dMax = 80,
