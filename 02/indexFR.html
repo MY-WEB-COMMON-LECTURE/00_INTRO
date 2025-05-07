@@ -1,0 +1,644 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+
+  <script src="js/particle-attraction/sketch.js"></script>
+  <script src="js/particle-attraction/particle.js"></script>
+  <script src="js/particle-attraction/attractor.js"></script>
+  <script src="js/particle-attraction/repulsor.js"></script>
+
+  <style>
+    #content{
+      display: none;
+    }
+</style>
+<script>
+    function showSite()
+    {
+      setTimeout(function(){
+        document.getElementById("content").style.display = "block";
+      }, 1000);
+    }
+</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=0, minimum-scale=1">
+
+  <title>Enzo Durand - CV & Portfolio</title>
+
+  <link rel="icon" type="image/png" href="icon/freelance.png">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+  <link href="css/welcome-animation.css " rel="stylesheet">
+
+</head>
+
+<body id="page-top" onload="showSite()">
+  
+  <!-- Welcome animation -->
+  <canvas id="reveal-effect"></canvas>
+
+  <div id="content">
+
+    <!-- Menu -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger">Menu</a>
+          <hr>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" id="home" href="#page-top">Accueil</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#informations">Informations</a>
+        </li>
+        <li id="skills-computer-menu"class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#skills">Compétences</a>
+        </li>
+        <li id="skills-phone-menu"class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#skills-phone">Compétences</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#experience">Expérience</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+      <a class="btn btn-primary btn-xl js-scroll-trigger" id="btn-lang" href="index.html" target="_blank">English version</a>
+      <div class="container text-center my-auto">
+        <h1 class="mb-1" id="name-title">enzo durand</h1>
+        <h3 class="mb-5" id="under-title">CV Intéractif & Portfolio</h3>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" id="btn-home" href="https://github.com/hanzopgp" target="_blank">Profil Github</a>
+      </div>
+      <div class="overlay"></div>
+    </header>
+
+    <!-- Informations -->
+    <section class="content-section bg-primary text-white text-center" id="informations">
+      <div class="container">
+        <div class="content-section-heading">
+          <h2 class="mb-5">Informations</h2>
+          <br><br>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <img class="speicon" src="icon/ICONadress.png">
+            <h4>
+              <strong>Adresse</strong>
+            </h4>
+            <p class="text-faded mb-0">27 rue Berthollet,<br>75005 Paris, France.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <img class="speicon" src="icon/ICONphone.png">
+            <h4>
+              <strong>Numéro de téléphone</strong>
+            </h4>
+            <p class="text-faded mb-0"><a href="tel:+33605409194">+33 6 05 40 91 94</a></p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+            <img class="speicon" src="icon/ICONemail.png">
+
+            <h4>
+              <strong>E-mail</strong>
+            </h4>
+            <p class="text-faded mb-0"><a href="mailto:enzodurandcontact@gmail.com">enzodurandcontact<br>@gmail.com</a></p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <img class="speicon" src="icon/ICONbirthdate.png">
+            <h4>
+              <strong>Date de naissance</strong>
+            </h4>
+            <p class="text-faded mb-0">18 Mars 1997.</p>
+          </div>
+        </div>
+
+        <br><br>
+
+        <div class="content-section-heading">
+          <h2 class="mb-5">Présentation</h2>
+          <br><br>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <img class="speicon" src="icon/hobbies.png">
+            <h4>
+              <strong>Hobbies <br>(hors Informatique)</strong>
+            </h4>
+            <p class="text-faded mb-0">
+              <ul id="hobbies">
+                <li>Physique</li>
+                <li>Mathématiques</li>
+                <li>Neurosciences</li>
+                <li>Biologie</li>
+                <li>Blockchain</li>
+                <li>Réalité virtuelle</li>
+                <li>Échecs</li>
+                <li>Musculation</li>
+                <li>Cinéma</li>
+              </ul>
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-6 mb-5 mb-lg-0">
+            <h4>
+              <strong id="display-on-phone">Présentation</strong>
+            </h4>
+            <p class="text-faded mb-0" id="presentation">J'étudie actuellement la science des données et l'intelligence artificielle à Sorbonne Université (Paris).
+              Après avoir completé mon master, j'aimerais faire un doctorat dans un domaine proche de l'IA.<br>
+              L'informatique m'intéresse depuis que j'ai commencé à résoudre des problèmes sur des ordinateurs. En effet, j'ai commencé très tôt, vers l'âge de 8 ans.<br>
+              Après m'être intéressé aux livres, aux documentaires et aux conférences en rapport avec l'IA, je suis convaincu que c'est le domaine dans lequel je veux travailler.
+              Les principaux livres qui m'ont influencé sont <a target="_blank" href="https://www.odilejacob.fr/catalogue/sciences/informatique/quand-la-machine-apprend_9782738149312.php">"Quand la machine apprend"</a>, <a target="_blank" href="https://www.lisez.com/livre-grand-format/la-plus-belle-histoire-de-lintelligence/9782221221105">"La plus belle histoire de l'intelligence"</a> écrit par Yann le Cun, 
+              ou actuellement <a target="_blank" href="https://www.oreilly.com/library/view/deep-learning/9781491924570/">"Deep Learning en action"</a> écrit par Josh Patterson & Adam Gibson.<br>
+              Pour finir, la personnalité que j'admire le plus et qui m'a fait me diriger vers l'informatique est Elon Musk. Son dévouement pour son travail est une des valeurs que je trouve fascinante. Je partage la vision qu'il transmet à travers ses conférences et entreprises.
+              Il semble qu'il fait passer l'humanité avant sa personne et je partage ceci. C'est l'une des raisons qui me donne envie de travailler dans la recherche après avoir terminé mes études.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <img class="speicon" src="icon/influence.png">
+            <h4>
+              <strong><a target="_blank" href="h  ttps://github.com/hanzopgp/sciencelinks">Influences</a></strong>
+            </h4>
+            <p class="text-faded mb-0">
+              <ul id="influences">
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=BMskI6G9ty0&t=2757s&ab_channel=Universit%C3%A9Paris1Panth%C3%A9on-Sorbonne">Elon Musk</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=2WiPx6thH2E&ab_channel=USIEvents">Yann Le Cun</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=1y34Obv3OVo&ab_channel=USIEvents">Étienne Klein</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=prpoogz36Sc&ab_channel=USIEvents">Cédric Villani</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=zYII3AOSgo8&ab_channel=Coll%C3%A8gedeFrance">Demis Hassabis</a></li>
+                <li><a target="_blank" href="https://github.com/hanzopgp/cleancodememento">Robert C. Martin</a></li>
+                <li>DeepMind (<a target="_blank" href="https://www.youtube.com/watch?v=2ciR6rA85tg&ab_channel=TwoMinutePapers">Chess</a> & <a target="_blank" href="https://www.youtube.com/watch?v=WXuK6gekU1Y&t=3296s&ab_channel=DeepMind">Go</a>)</li>
+                <li>OpenAI (<a target="_blank" href="https://www.youtube.com/watch?v=Lu56xVlZ40M&ab_channel=TwoMinutePapers">Hide&Seek</a>)</li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=iOWFXqT5MZ4&ab_channel=CNET">Neuralink</a></li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Skill carousel -->
+    <section class="content-section bg-primary text-white text-center" id="skills">
+      <h2 class="mb-5">Compétences</h2>
+      <div class="container my-4">
+
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    
+          <!--Controls-->
+          <div class="controls-top">
+            <a class="btn-floating leftarrow" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+            <a class="btn-floating rightarrow" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+          </div>
+          <!--/.Controls-->
+
+          <!--Indicators-->
+          <ol class="carousel-indicators">
+            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+            <li data-target="#multi-item-example" data-slide-to="1"></li>
+            <li data-target="#multi-item-example" data-slide-to="2"></li>
+          </ol>
+          <!--/.Indicators-->
+    
+          <!--Slides-->
+          <div class="carousel-inner" role="listbox">
+    
+            <!--First slide-->
+            <div class="carousel-item active">
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/software.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Développement de logiciel</h4>
+                      <p class="card-text">Plusieurs projects en Java, Python, Haskell... Ceux-ci peuvent être consultés sur mon profil github.</p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="col-md-4 clearfix d-none d-md-block">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/AI.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Intelligence Artificielle</h4>
+                      <p class="card-text">Théorie des jeux, algorithmes génétiques, machine learning, deep learning, natural language processing etc...</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 clearfix d-none d-md-block">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/bio.jpg"
+                      alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Biologie</h4>
+                      <p class="card-text">Bio-Informatique, biologie cellulaire, biologie moléculaire, génétique, neurosciences...</p>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+    
+            </div>
+            <!--/.First slide-->
+    
+            <!--Second slide-->
+            <div class="carousel-item">
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/maths.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Mathématiques</h4>
+                      <p class="card-text">Analyse, algèbre, statistiques et probabilités...</p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="col-md-4 clearfix d-none d-md-block">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/hardware.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Matériel informatique et éléctronique</h4>
+                      <p class="card-text">Connaissances en éléctronique, électrique, langage VHDL grâce à une année d'alternance en DUT GEII avec Enedis.</p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="col-md-4 clearfix d-none d-md-block">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/network.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Système et réseaux</h4>
+                      <p class="card-text">Connaissances de base en système et réseaux, quelques projets en bash/shell/awk...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+            <!--/.Second slide-->
+
+            <!--Third slide-->
+            <div class="carousel-item">
+
+              <div class="row">
+
+                <div class="col-md-4 clearfix d-none d-md-block">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/diversity.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Diversité des langages</h4>
+                      <p class="card-text">Grâce aux deux filières suivies, j'ai appris beaucoup de differents langages et technologies. J'ai aussi de solide bases en développement web.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 clearfix d-none d-md-block">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/video.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Logiciels d'édition</h4>
+                      <p class="card-text">Montage vidéo et production musicale pour des projets personnels.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="card mb-2">
+                    <img class="card-img-top" src="img/imgskills/mobilitylanguage.jpg"
+                      alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Mobilité & langues</h4>
+                      <p class="card-text">Je suis titulaire du permis depuis 2015 et je possède un véhicule.<br>Ma langue natale est le français mais je parle couramment anglais, et je parle aussi espagnol.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+    
+            </div>
+            <!--/.Third slide-->
+    
+          </div>
+          <!--/.Slides-->
+    
+        </div>
+        <!--/.Carousel Wrapper-->
+    
+      </div>
+    </section>
+
+    <section class="content-section bg-primary text-white text-center" id="skills-phone">	        
+      <div class="container">	
+        <div class="content-section-heading">	
+          <h2 class="mb-5">Compétences</h2>
+          <br><br>	          
+        </div>	
+        <div class="row">	
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">	
+            <img class="card-img-top" src="img/imgskills/software.jpg" alt="Card image cap">
+            <h4>	
+              <strong>Développement de logiciel</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Plusieurs projects en Java, Python, Haskell... Ceux-ci peuvent être consultés sur mon profil github.</p>	
+          </div>	
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">	
+            <img class="card-img-top" src="img/imgskills/AI.jpg" alt="Card image cap">
+            <h4>	
+              <strong>Intelligence Artificielle</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Théorie des jeux, algorithmes génétiques, marchine learning & deep learning (MLP, CNN, RNN, LSTM, Auto-Encoders)</p>	
+          </div>	
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">	
+            <img class="card-img-top" src="img/imgskills/diversity.jpg" alt="Card image cap">	
+            <h4>	
+              <strong>Biologie</strong>	
+            </h4>	    
+            <p class="text-faded mb-0">Bio-Informatique, biologie cellulaire, biologie moléculaire, génétique, neurosciences...</p>
+          </div>	
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">	
+            <img class="card-img-top" src="img/imgskills/science.jpg" alt="Card image cap">	
+            <h4>	
+              <strong>Mathématiques</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Analyse, algèbre, statistiques et probabilités...</p>	
+          </div>	
+        </div>
+
+        <div class="row">	
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">	
+            <img class="card-img-top" src="img/imgskills/hardware.jpg" alt="Card image cap">
+            <h4>	
+              <strong>Matériel informatique et éléctronique</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Connaissances en éléctronique, éléctrique, language VHDL grâce à une année d'alternance en DUT GEII avec Enedis.</b></p>	
+          </div>	
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">	
+            <img class="card-img-top" src="img/imgskills/network.jpg" alt="Card image cap">
+            <h4>	
+              <strong>Système et réseaux</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Connaissances de base en système et réseaux, quelques projets en bash/shell/awk...</p>	
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">	
+            <img class="card-img-top" src="img/imgskills/diversity.jpg" alt="Card image cap">	
+            <h4>	
+              <strong>Diversité</strong>
+            </h4>	    
+            <p class="text-faded mb-0">Grâce aux deux filières suivies, j'ai appris beaucoup de differents langages et technologies et j'aime beaucoup en apprendre de nouveaux.</p>	
+          </div>	
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">		
+            <img class="card-img-top" src="img/imgskills/video.jpg" alt="Card image cap">
+            <h4>	
+              <strong>Logiciel d'édition</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Montage vidéo et production musicale pour des projets personnels.</p>	
+          </div>	
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">	
+            <img class="card-img-top" src="img/imgskills/mobilitylanguage.jpg" alt="Card image cap">
+            <h4>	
+              <strong>Mobilité et langues</strong>	
+            </h4>	
+            <p class="text-faded mb-0">Je suis titulaire du permis depuis 2015 et je possède un véhicule.<br>Ma langue natale est le français mais je parle couramment anglais, et je parle aussi espagnol.</p>
+          </div>	
+        </div>	
+      </section>
+
+    <!-- Experience -->
+        <section class="content-section bg-primary text-white text-center" id="experience">
+          <div class="container">
+            <div class="content-section-heading">
+              <h2 class="mb-5">Experience</h2>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <img class="speicon" src="icon/ICONenedis.png">
+                <h4>
+                  <strong>Enedis (ERDF)</strong>
+                </h4>
+                <p class="text-faded mb-0">Chargé d'affaire patrimoine à Equeurdreville, France.<br>Alternance.<br><br>2015 - 2016</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <img class="speicon" src="icon/ICONpizza.png">
+                <h4>
+                  <strong>La Boite a Pizza</strong>
+                </h4>
+                <p class="text-faded mb-0">Employé polyvalent et livreur de pizzas à Cherbourg, France.<br>Travail d'été.<br><br>2016 / 2017 / 2018</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                <img class="speicon" src="icon/ICONburgerking.png">
+                <h4>
+                  <strong>Burger King</strong>
+                </h4>
+                <p class="text-faded mb-0">Caissier à Manosque, France.<br>Travail d'été.<br><br>2018 (1 mois)</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <img class="speicon" src="icon/ICONlidl.png">
+                <h4>
+                  <strong>Lidl</strong>
+                </h4>
+                <p class="text-faded mb-0">Employé polyvalent et caissier à Querqueville, France.<br>Travail d'été.<br><br>2019 (1 mois)</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 experience-down">
+                <img class="speicon" src="icon/teacher.png">
+                <h4>
+                  <strong>Cours particuliers</strong>
+                </h4>
+                <p class="text-faded mb-0">Cours de Mathématiques et Physique pour lycéens et bac+1.<br>Travail en freelance.<br><br>2017 - 2018 - 2019</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 experience-down">
+                <img class="speicon" src="icon/freelance.png">
+                <h4>
+                  <strong>Freelance</strong>
+                </h4>
+                <p class="text-faded mb-0">Développement de sites internet pour des entrepreneurs de mon entourage.<br>Travail en freelance.<br><br>2019 - 2020</p>
+              </div>  
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 experience-down">
+                <img class="speicon" src="icon/teacher.png">
+                <h4>
+                  <strong>Tutorat Université de Caen</strong>
+                </h4>
+                <p class="text-faded mb-0">Tutorat aidant les 1ère années de licence informatique.<br>Contract étudiant avec formation.<br><br>Mars 2021 - aujourd'hui</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0 experience-down">
+                <img class="speicon" src="icon/deepn.png">
+                <h4>
+                  <strong>Deepn</strong>
+                </h4>
+                <p class="text-faded mb-0">Stage en tant que développeur en intelligence artificielle pour completer ma licence informatique.<br><br>April 2021 - June 2021</p>
+              </div>   
+            </div>
+            <div class="content-section-heading">
+              <br><br><br>
+              <h2 class="mb-5">Formation</h2>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <img class="speicon" src="icon/ICONbac.png">
+                <!-- <img class="speicon" src="icon/grignard.png"> -->
+                <h4>
+                  <strong>Baccalauréat</strong>
+                </h4>
+                <p class="text-faded mb-0">Baccalauréat scientifique obtenu avec mention et section européene.<br><br>2015</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                <img class="speicon" style="width:127px" src="icon/iutcherb.png">
+                <h4>
+                  <strong>DUT</strong>
+                </h4>
+                <p class="text-faded mb-0">1ère année DUT Génie éléctrique et informatique industrielle en alternance avec Enedis.<br><br>2015 - 2016</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <img class="speicon" style="width:140px" src="icon/unicaen.png">
+                <h4>
+                  <strong>Licence</strong>
+                </h4>
+                <p class="text-faded mb-0">Licence informatique, spécialisation IA. Obtenu avec mention.<br><br>2016-2021<br>(3 semestres de pause)</p>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <img class="speicon" style="width:180px" src="icon/sorbonne.png">
+                <h4>
+                  <strong>Master</strong>
+                </h4>
+                <p class="text-faded mb-0">Master IA, actuellement en première année.<br><br>2021-2023</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+  <!-- Portfolio -->
+  <section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h2 class="mb-5"><a class="nostyle" target="_blank" href="https://hanzopgp.github.io/ProjectList/">Portfolio</a></h2>
+        <h3 class="mb-5"><a class="nostyle under-portfolio" target="_blank" href="https://hanzopgp.github.io/ProjectList/">- Cliquez pour voir tous les projets -</a></h3>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="https://github.com/hanzopgp/SmartCars" target="_blank">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2"><strong>Smart cars</strong></div>
+                <p class="mb-0">Ce programme est une course de voitures permettant d'illustrer l'apprentissage par utilisation d'algorithme génétique.</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/imgportfolio/imgsmartcars.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="https://github.com/hanzopgp/NeuralNetworkFromScratch" target="_blank">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2"><strong>Neural network</strong></div>
+                <p class="mb-0">Voici un perceptron multi-couches sans utilisation de librairie externe à part numpy. (en cours)</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/imgportfolio/neuralnetwork.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="https://github.com/hanzopgp/ArchitectApp" target="_blank">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2"><strong>Application d'architecture</strong></div>
+                <p class="mb-0">Librairie de programmation par contrainte implémentant plusieurs algorithmes en java.</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/imgportfolio/imgarchi.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="https://github.com/hanzopgp/TetrisRevisitedGame" target="_blank">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2"><strong>Tetris revisité</strong></div>
+                <p class="mb-0">Ce programme contient un solveur, un système de sauvegarde et une architecture MVC.</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/imgportfolio/imgtetris.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center" id="contact">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a href="mailto:enzodurandcontact@gmail.com" class="fa fa-envelope" target="_blank"></a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://twitter.com/shikamaru667" class="fa fa-twitter" target=”_blank”></a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://fr.quora.com/profile/Hanzo?ch=10&share=519cf10b&srid=YhyTm" class="fa fa-quora"></a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://github.com/hanzopgp" class="fa fa-github" target="_blank"></a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://www.linkedin.com/in/enzo-durand-494700204/" class="fa fa-linkedin" target="_blank"></a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://hanzopgp.github.io/ProjectList/" class="fa fa-folder" target=”_blank”></a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0" id="Copyright">Code du site disponible sur <a target="_blank" href="https://github.com/hanzopgp/CVPortfolioWeb">github</a>.</p>
+        <p class="text-muted small mb-0" id="Copyright">Copyright &copy; Enzo Durand - CV & Portfolio 2021.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.js"></script>
+  <script src="js/welcome-animation.js"></script>
+  
+</body>
+
+</html> -->
