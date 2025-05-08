@@ -33,10 +33,32 @@
         z-index: 1000;
         border-radius: 50%;
       }
+      .my_profile {
+        position: fixed;
+        right : 0;
+        bottom: 0;
+        top:0;
+        margin:auto;
+        background-color: transparent;
+        border-left : 2px solid white;
+        width: 500px;
+        height: 100vh;
+        z-index: 2000;
+      }
+      .my_profile h1{
+        position: relative;
+        z-index: 2000;
+        color:white;
+      }
     </style>
 </head>
 <body>
     <iframe id="background-iframe" src="02/index.html"></iframe>
     <iframe id="earth-iframe" src="01/index.html"></iframe>
+    <div class="my_profile">
+        <div class="header">
+         
+        </div>
+    </div>
 </body>
 </html>
