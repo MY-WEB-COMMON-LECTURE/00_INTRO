@@ -11,7 +11,7 @@ body {font-family: 'Noto Sans KR', sans-serif;}
     width: 100%;
     height: 76px;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 3000;
 }
 
 .nav {
@@ -19,6 +19,7 @@ body {font-family: 'Noto Sans KR', sans-serif;}
     width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    z-index: 3000;
 }
 
 .nav h1 {
@@ -167,6 +168,8 @@ body {font-family: 'Noto Sans KR', sans-serif;}
     background-color: rgba(183,183,183,0.15);
     border: 1px solid rgba(118,118,118,0.3);
     padding: 8px;
+    position: relative;
+    z-index: 3000;
     
 }
 
@@ -177,6 +180,7 @@ body {font-family: 'Noto Sans KR', sans-serif;}
     display: block;
     object-fit: contain;
     background-color: transparent;
+
 }
 
 #section1 .container1 h2 {
@@ -185,7 +189,10 @@ body {font-family: 'Noto Sans KR', sans-serif;}
     text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
     padding-top: 12px;
     font-weight: 900;
+
     letter-spacing: 2px;
+    position: relative;
+    z-index: 3000;
 }
 
 #section1 .type-wrap #typed {
