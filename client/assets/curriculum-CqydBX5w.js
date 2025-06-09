@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-DexIYAB0.js";function u(){return r.jsxs("div",{style:{padding:"2rem"},children:[r.jsx("h1",{children:"Curriculum"}),r.jsx("p",{children:"This is the Curriculum page."})]})}export{u as default};
