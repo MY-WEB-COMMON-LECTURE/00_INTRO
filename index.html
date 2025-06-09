@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="JUNGWOOGYUN">
+    <meta name="description" content="정우균 포트폴리오 사이트">
+    <meta name="keywords" content="웹퍼블리셔, 웹접근성, 반응형사이트, HTML5, WEB">
+    <title>JUNGWOOGYUN's PORTFOLIO</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="img/favicon-32.png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicon-180.png">
+    <link rel="icon" href="img/favicon-16.png">
+
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        alert("Please Upgrade Your BROWSER !");
+    </script>
+    <![endif]-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+        }
+
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 9999;
+            transition: top 1s ease-in-out;
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100vw;
+            max-width: 100vw;
+        }
+
+        .loading-text {
+            font-size: 12px;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 0.5em;
+            margin-bottom: 30px;
+        }
+
+        .loading-text-words {
+            display: inline-block;
+            opacity: 0;
+            animation: loading 1.5s infinite;
+            transform: translateY(0);
+        }
+
+        .loading-text-words:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-text-words:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .loading-text-words:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .loading-text-words:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        .loading-text-words:nth-child(6) {
+            animation-delay: 1.0s;
+        }
+
+        .loading-text-words:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+
+        @keyframes loading {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(-5px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+        }
+
+        .progress-bar {
+            position: relative;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+            display: block;
+            margin: 0;
+            max-width: 100vw;
+            min-width: 0;
+            transform: none;
+            transform-origin: left center;
+        }
+
+        .progress-text {
+            display: block;
+            margin: 18px auto 0 auto;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            letter-spacing: 0.2em;
+        }
+
+        .progress-complete {
+            top: -100%;
+        }
+
+        .progress-complete .progress-bar,
+        .progress-complete .progress-text {
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .progress-blocks {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px auto 10px auto;
+        }
+        .block {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #fff;
+            border-radius: 3px;
+            background: transparent;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .block.filled {
+            background: #00e676;
+            border-color: #00e676;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Loading Progress Effect -->
+    <div class="progress" id="progress">
+        <div id="loading">
+            <div class="loading-text">
+                <span class="loading-text-words">L</span>
+                <span class="loading-text-words">O</span>
+                <span class="loading-text-words">A</span>
+                <span class="loading-text-words">D</span>
+                <span class="loading-text-words">I</span>
+                <span class="loading-text-words">N</span>
+                <span class="loading-text-words">G</span>
+            </div>
+            <div class="progress-blocks">
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+                <span class="block"></span>
+            </div>
+            <span class="progress-text">0%</span>
+        </div>
+    </div>
+
+    <!-- nav_wrap -->
+    <div id="nav_wrap">
+        <div class="nav">
+            <h1>
+                <a href="#">
+                    <span class="color0">JUNG</span>
+                    <span class="color1">WOOGYUN</span>
+                </a>
+            </h1>
+            <ul class="menu">
+                <li class="active"><a href="#">HOME</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li class="last"><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //nav_wrap -->
+
+    <!-- section_wrap -->
+    <div id="section_wrap">
+        <div id="section1">
+            <div class="container1 type-wrap">
+                <span class="avatar"><img src="img/avatar.png" alt="프로필"></span>
+                <h2>PORTFOLIO</h2>
+                <div id="typed-strings">
+                    <p>Welcome And Thank You For Visiting My Website</p>
+                </div>
+                <span id="typed" style="white-space:pre;"></span>
+            </div>
+        </div>
+        <!-- //section1 -->
+
+        <!-- section2 -->
+        <div id="section2">
+            <div class="container2">
+                <h3>PORTFOLIO</h3>
+                <div class="box_wrap">
+                    <div class="p_box item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/pf_1.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="http://kangsane.dothome.co.kr/gabia/" target="_blank">Site
+                                    바로가기</a>
+                            </div>
+                        </div>
+                        <span>가비아 사이트</span>
+                        <p>웹표준 기업 사이트(반응형, 도메인 서브페이지 제작)</p>
+                    </div>
+
+                    <div class="p_box item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/pf_2.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="http://kangsane.dothome.co.kr/web/" target="_blank">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>웹표준 사이트 제작(퍼블리싱)</p>
+                    </div>
+
+                    <div class="p_box last item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/pf_3.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="http://kangsane.dothome.co.kr/responsive/html5/index.html"
+                                    target="_blank">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>반응형 사이트</span>
+                        <p>웹표준 반응형 사이트 제작(퍼블리싱)</p>
+                    </div>
+
+                    <div class="p_box item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/pf_4.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="http://kangsane.dothome.co.kr/locknlock/" target="_blank">Site
+                                    바로가기</a>
+                            </div>
+                        </div>
+                        <span>락앤락 사이트</span>
+                        <p>락앤락 기업 사이트 메인 페이지입니다.</p>
+                    </div>
+
+                    <div class="p_box item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="#">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>준비중입니다.</p>
+                    </div>
+
+                    <div class="p_box last item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="#">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>준비중입니다.</p>
+                    </div>
+
+                </div>
+                <!-- //box_wrap -->
+            </div>
+            <!-- //container2 -->
+        </div>
+        <!-- //section2 -->
+
+        <!-- section3 -->
+        <div id="section3">
+            <div class="container3">
+                <address>
+                    <ul>
+                        <li>Tel : 010-9905-1526</li>
+                        <li>Kakao : sovaniirune</li>
+                    </ul>
+                    Copyright @ 2019 by <span class="color0">KIM</span><span class="color1">KANGSAN</span> All Right
+                    Reserved
+                </address>
+            </div>
+        </div>
+        <!-- //section3 -->
+    </div>
+    <!-- //section_wrap -->
+
+    <!-- 스크립트 -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/demos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script>
+        $(function () {
+            imagesProgress();
+        });
+        function imagesProgress() {
+            var $container = $('#progress'),
+                $progressText = $container.find('.progress-text'),
+                $blocks = $container.find('.block'),
+                blockCount = $blocks.length,
+                imgLoad = imagesLoaded('html'),
+                imgTotal = imgLoad.images.length,
+                imgLoaded = 0,
+                current = 0,
+                progressTimer = setInterval(updateProgress, 1000 / 60);
+            imgLoad.on('progress', function () {
+                imgLoaded++;
+            });
+            function updateProgress() {
+                var target = (imgLoaded / imgTotal) * 100;
+                current += (target - current) * 0.1;
+                // Fill blocks left to right with green
+                var filledBlocks = Math.round((current / 100) * blockCount);
+                $blocks.removeClass('filled');
+                for (var i = 0; i < filledBlocks; i++) {
+                    $blocks.eq(i).addClass('filled');
+                }
+                $progressText.text(Math.floor(current) + '%');
+                if (current >= 100) {
+                    clearInterval(progressTimer);
+                    $container.addClass('progress-complete');
+                    $blocks.add($progressText).delay(500).animate({ opacity: 0 }, 250, function () {
+                        $container.animate({ top: '-100%' }, 1000, 'easeInOutQuint');
+                    });
+                }
+                if (current > 99.9) {
+                    current = 100;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
