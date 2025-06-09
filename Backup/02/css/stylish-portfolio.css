@@ -83,6 +83,7 @@ body {
 
 #presentation{
   text-align: justify;
+  display: none;
 }
 
 #informations h2, #skills h2{
@@ -595,6 +596,7 @@ strong {
   border : 2px solid #d9e7b0;
 }
 
+
 #portfolio .caption-content{
   padding-top: 50px;
 }
@@ -721,6 +723,7 @@ footer.footer .social-link:hover {
 
 a {
   color: #1D809F;
+
 }
 
 a:hover, a:focus, a:active {

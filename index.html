@@ -33,17 +33,6 @@
     <![endif]-->
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #000;
-        }
-
         .progress {
             position: fixed;
             top: 0;
@@ -144,6 +133,7 @@
             color: #fff;
             font-family: Arial, sans-serif;
             letter-spacing: 0.2em;
+           
         }
 
         .progress-complete {
@@ -154,6 +144,7 @@
         .progress-complete .progress-text {
             opacity: 0;
             transition: opacity 0.25s ease;
+            
         }
 
         .progress-blocks {
@@ -161,6 +152,7 @@
             justify-content: center;
             gap: 8px;
             margin: 10px auto 10px auto;
+            
         }
 
         .block {
@@ -177,11 +169,95 @@
             background: #00e676;
             border-color: #00e676;
         }
+
+        #section2 {
+            background: transparent;
+            padding: 40px 0 60px 0;
+        }
+        #section2 h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #333c60;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        #section2 h3:after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: #907dda;
+            margin: 16px auto 0 auto;
+            border-radius: 2px;
+        }
+        .box_wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px 0;
+            margin-top: 32px;
+        }
+        .p_box {
+            background: #fff;
+            width: 32%;
+            min-width: 280px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            box-shadow: none;
+            padding: 24px 18px 18px 18px;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: box-shadow 0.2s;
+        }
+        .p_box .img_box {
+            width: 100%;
+            margin-bottom: 18px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .p_box .img_box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+        .p_box .overlay { display: none; }
+        .p_box span {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333c60;
+            margin-bottom: 4px;
+        }
+        .p_box p {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 0;
+        }
+        @media (max-width: 1024px) {
+            .box_wrap { flex-direction: column; align-items: center; }
+            .p_box { width: 90%; margin-bottom: 24px; }
+        }
+
+        #dots-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
     </style>
 
 </head>
 
 <body>
+    <canvas id="dots-bg"></canvas>
     <!-- Loading Progress Effect -->
     <div class="progress" id="progress">
         <div id="loading">
@@ -215,12 +291,10 @@
         <div class="nav">
             <h1>
                 <a href="#">
-                    <span class="color0">JUNG</span>
-                    <span class="color1">WOOGYUN</span>
+                    <span class="color1">HOME</span>
                 </a>
             </h1>
             <ul class="menu">
-                <li class="active"><a href="#">HOME</a></li>
                 <li><a href="#section2">PROJECTS</a></li>
                 <li class="last"><a href="#">CONTACT</a></li>
             </ul>
@@ -243,18 +317,23 @@
                 iframe {
                     margin: 0;
                     padding: 0;
+
                 }
 
                 #background-iframe {
                     position: absolute;
                     top: 0;
+                    
                     left: 0;
-                    width: 100%;
+                    margin : 0 auto;
+                    width : 100vw !important;
                     height: 100%;
                     border: none;
                     z-index: 1;
                     overflow: hidden;
-                    opacity: .5;
+                    /* opacity: .5; */
+                    padding :0;
+                    background-color: #000;
                 }
 
                 #earth-iframe {
@@ -299,22 +378,21 @@
 
         <!-- section2 -->
         <div id="section2">
+           
             <div class="container2">
-
-                <h3>PROJECTS</h3>
+                <h3 id="section2H3">PORTFOLIO</h3>
                 <div class="box_wrap">
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
                             <a href="#"><img src="img/pf_1.png" alt="사이트"></a>
                             <div class="overlay">
-                                <a class="info" href="http://kangsane.dothome.co.kr/gabia/" target="_blank">Site
-                                    바로가기</a>
+                                <a class="info" href="http://kangsane.dothome.co.kr/gabia/" target="_blank">Site 바로가기</a>
                             </div>
                         </div>
                         <span>가비아 사이트</span>
                         <p>웹표준 기업 사이트(반응형, 도메인 서브페이지 제작)</p>
                     </div>
-
+                    
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
                             <a href="#"><img src="img/pf_2.png" alt="사이트"></a>
@@ -325,31 +403,29 @@
                         <span>웹표준 사이트</span>
                         <p>웹표준 사이트 제작(퍼블리싱)</p>
                     </div>
-
+                    
                     <div class="p_box last item" data-aos="fade-up">
                         <div class="img_box">
                             <a href="#"><img src="img/pf_3.png" alt="사이트"></a>
                             <div class="overlay">
-                                <a class="info" href="http://kangsane.dothome.co.kr/responsive/html5/index.html"
-                                    target="_blank">Site 바로가기</a>
+                                <a class="info" href="http://kangsane.dothome.co.kr/responsive/html5/index.html" target="_blank">Site 바로가기</a>
                             </div>
                         </div>
                         <span>반응형 사이트</span>
                         <p>웹표준 반응형 사이트 제작(퍼블리싱)</p>
                     </div>
-
+                    
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
                             <a href="#"><img src="img/pf_4.png" alt="사이트"></a>
                             <div class="overlay">
-                                <a class="info" href="http://kangsane.dothome.co.kr/locknlock/" target="_blank">Site
-                                    바로가기</a>
+                                <a class="info" href="http://kangsane.dothome.co.kr/locknlock/" target="_blank">Site 바로가기</a>
                             </div>
                         </div>
                         <span>락앤락 사이트</span>
                         <p>락앤락 기업 사이트 메인 페이지입니다.</p>
                     </div>
-
+                    
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
                             <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
@@ -360,7 +436,7 @@
                         <span>웹표준 사이트</span>
                         <p>준비중입니다.</p>
                     </div>
-
+                    
                     <div class="p_box last item" data-aos="fade-up">
                         <div class="img_box">
                             <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
@@ -371,13 +447,62 @@
                         <span>웹표준 사이트</span>
                         <p>준비중입니다.</p>
                     </div>
-
                 </div>
                 <!-- //box_wrap -->
             </div>
             <!-- //container2 -->
         </div>
-        <!-- //section2 -->
+        <style>
+        .box_wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .p_box {
+            width: 30%;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .p_box .img_box {
+            position: relative;
+            overflow: hidden;
+        }
+        .p_box .img_box img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .p_box .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .p_box:hover .overlay {
+            opacity: 1;
+        }
+        .p_box .info {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .p_box span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .p_box p {
+            margin-top: 5px;
+            color: #666;
+        }
+        </style>
 
         <!-- section3 -->
         <div id="section3">
@@ -451,6 +576,40 @@
                 }
             }
         }
+    </script>
+
+    <script>
+    function setupDots() {
+        var canvas = document.getElementById('dots-bg');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        var docWidth = Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth);
+        var docHeight = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight);
+        canvas.width = docWidth;
+        canvas.height = docHeight;
+        // 점 개수를 문서 크기에 따라 자동 조정 (예: 10,000px²당 1개, 최소 120개)
+        var dotCount = Math.max(120, Math.floor((docWidth * docHeight) / 10000));
+        var dots = [];
+        for (var i = 0; i < dotCount; i++) {
+            dots.push({
+                x: Math.random() * docWidth,
+                y: Math.random() * docHeight,
+                r: Math.random() * 2 + 1,
+                a: Math.random() * 0.5 + 0.3
+            });
+        }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < dots.length; i++) {
+            ctx.beginPath();
+            ctx.arc(dots[i].x, dots[i].y, dots[i].r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(120,120,120,' + dots[i].a + ')';
+            ctx.fill();
+        }
+    }
+    window.addEventListener('DOMContentLoaded', setupDots);
+    window.addEventListener('resize', setupDots);
+    window.addEventListener('scroll', setupDots);
+    window.addEventListener('load', setupDots);
     </script>
 
 </body>
