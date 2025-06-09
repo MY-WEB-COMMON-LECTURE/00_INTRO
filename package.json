@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
-  "homepage": "https://hamishw.com",
+  "homepage": "https://my-web-common-lecture.github.io/00_INTRO/",
   "description": "Portfolio site for Hamish Williams",
-  "repository": "https://github.com/HamishMW/portfolio.git",
+  "repository": "https://github.com/MY-WEB-COMMON-LECTURE/00_INTRO.git",
   "author": "Hamish Williams",
   "sideEffects": false,
   "type": "module",
@@ -14,7 +14,9 @@
     "deploy": "npm run build && wrangler pages deploy ./build/client --project-name portfolio",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "deploy:storybook": "wrangler pages deploy ./storybook-static --project-name portfolio-storybook --branch main"
+    "deploy:storybook": "wrangler pages deploy ./storybook-static --project-name portfolio-storybook --branch main",
+    "predeploy": "npm run build",
+    "deploy":  "gh-pages -d build"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.515.0",
@@ -52,6 +54,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "gh-pages": "^6.3.0",
     "node-fetch": "^3.3.2",
     "postcss": "^8.4.33",
     "postcss-custom-media": "^10.0.2",
