@@ -44,7 +44,7 @@ function setup(){
 			offsetsAlt.push(offsets[5]+responsiveOffSetTxtAlt*i);
 		}
 		for(var i = 0; i < nbParticles; i++){
-			particles.push(new Particle(random(rangeX, windowWidth - rangeX), random(rangeY, windowHeight - rangeY)));
+			particles.push(new Particle(random(0, windowWidth), random(0, windowHeight)));
 		}
 
 		if(windowWidth > 800){
@@ -107,7 +107,7 @@ function setup(){
 			offsetsAlt.push(offsets[offsets.length]+3+responsiveOffSetTxtAlt*i);
 		}
 		for(var i = 0; i < nbParticles; i++){
-			particles.push(new Particle(random(rangeX, displayWidth - rangeX), random(rangeY, displayHeight - rangeY)));
+			particles.push(new Particle(random(0, displayWidth), random(0, displayHeight)));
 		}
 	}
 
