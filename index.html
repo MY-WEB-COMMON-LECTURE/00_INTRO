@@ -578,39 +578,7 @@
         }
     </script>
 
-    <script>
-    function setupDots() {
-        var canvas = document.getElementById('dots-bg');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var docWidth = Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth);
-        var docHeight = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight);
-        canvas.width = docWidth;
-        canvas.height = docHeight;
-        // 점 개수를 문서 크기에 따라 자동 조정 (예: 10,000px²당 1개, 최소 120개)
-        var dotCount = Math.max(120, Math.floor((docWidth * docHeight) / 10000));
-        var dots = [];
-        for (var i = 0; i < dotCount; i++) {
-            dots.push({
-                x: Math.random() * docWidth,
-                y: Math.random() * docHeight,
-                r: Math.random() * 2 + 1,
-                a: Math.random() * 0.5 + 0.3
-            });
-        }
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < dots.length; i++) {
-            ctx.beginPath();
-            ctx.arc(dots[i].x, dots[i].y, dots[i].r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(120,120,120,' + dots[i].a + ')';
-            ctx.fill();
-        }
-    }
-    window.addEventListener('DOMContentLoaded', setupDots);
-    window.addEventListener('resize', setupDots);
-    window.addEventListener('scroll', setupDots);
-    window.addEventListener('load', setupDots);
-    </script>
+
 
 </body>
 
