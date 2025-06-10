@@ -232,6 +232,7 @@ section{
     border-top: 1px solid #ddd;
     background: url(../img/portbg.png);
     background-size: cover;
+    
 }
 
 #section5 .container2 {
@@ -239,6 +240,7 @@ section{
     height : 100%;
     margin: 0 auto;
     overflow: hidden;
+    padding-bottom: 50px;
 }
 
 #section5 h3 {
@@ -925,8 +927,14 @@ footer{
     line-height: 1.5;
     position: relative;
     width : 100%;
+    position:relative;
 }
-
+footer address{
+    position:absolute;;
+    bottom:10px;
+    right:10px;
+    font-size:.7rem;
+}
 /* About Me Section */
 .about-content {
     display: flex;
@@ -1027,4 +1035,97 @@ footer{
     .about-text h4 {
         font-size: 1.8rem;
     }
+}
+
+/* section6 */
+#section6 {
+    width: 100%;
+    background: #f8f9fa;
+    padding: 40px 0 60px 0;
+}
+
+#section6 .container6 {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#section6 h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333c60;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    position: relative;
+    top: 50px;
+    z-index: 3000;
+}
+#section6 h3:after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #907dda;
+    margin: 16px auto 0 auto;
+    border-radius: 2px;
+}
+
+#section6 .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 80px;
+    padding-bottom: 20px;
+}
+
+#section6 .contact-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    padding: 32px 40px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+}
+#section6 .contact-item:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.13);
+}
+
+#section6 .contact-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333c60;
+    margin-bottom: 8px;
+}
+#section6 .contact-value {
+    font-size: 1rem;
+    color: #444;
+    word-break: break-all;
+}
+#section6 .contact-value a {
+    color: #907dda;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+@media (max-width: 1024px) {
+    #section6 .container6 {
+        width: 95%;
+    }
+    #section6 .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    #section6 .contact-item {
+        width: 90%;
+        min-width: 0;
+        margin-bottom: 24px;
+    }
+}
 }
