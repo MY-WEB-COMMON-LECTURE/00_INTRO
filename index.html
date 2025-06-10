@@ -26,6 +26,35 @@
     <link rel="apple-touch-icon-precomposed" href="img/favicon-180.png">
     <link rel="icon" href="img/favicon-16.png">
 
+
+        <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="./js/typed.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/demos.js"></script>
+
+    <script>
+        $(function() {
+            // AOS initialization
+            AOS.init({
+                duration: 800,
+            });
+
+            // Typed.js initialization
+            new Typed('#typed', {
+                strings: ['Welcome And Thank You For Visiting My Website'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                startDelay: 1000,
+                showCursor: true,
+                loop: false
+            });
+        });
+    </script>
+
+
     <!--[if IE 8]>
     <script type="text/javascript">
         alert("Please Upgrade Your BROWSER !");
@@ -33,225 +62,7 @@
     <![endif]-->
 
     <style>
-        .progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: #000;
-            z-index: 9999;
-            transition: top 1s ease-in-out;
-        }
-
-        #loading {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 100vw;
-            max-width: 100vw;
-        }
-
-        .loading-text {
-            font-size: 12px;
-            font-weight: 400;
-            color: #fff;
-            text-align: center;
-            letter-spacing: 0.5em;
-            margin-bottom: 30px;
-        }
-
-        .loading-text-words {
-            display: inline-block;
-            opacity: 0;
-            animation: loading 1.5s infinite;
-            transform: translateY(0);
-        }
-
-        .loading-text-words:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .loading-text-words:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        .loading-text-words:nth-child(4) {
-            animation-delay: 0.6s;
-        }
-
-        .loading-text-words:nth-child(5) {
-            animation-delay: 0.8s;
-        }
-
-        .loading-text-words:nth-child(6) {
-            animation-delay: 1.0s;
-        }
-
-        .loading-text-words:nth-child(7) {
-            animation-delay: 1.2s;
-        }
-
-        @keyframes loading {
-            0% {
-                opacity: 0;
-                transform: translateY(0);
-            }
-
-            50% {
-                opacity: 1;
-                transform: translateY(-5px);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(0);
-            }
-        }
-
-        .progress-bar {
-            position: relative;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: #fff;
-            transition: width 0.3s ease;
-            display: block;
-            margin: 0;
-            max-width: 100vw;
-            min-width: 0;
-            transform: none;
-            transform-origin: left center;
-        }
-
-        .progress-text {
-            display: block;
-            margin: 18px auto 0 auto;
-            text-align: center;
-            font-size: 12px;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            letter-spacing: 0.2em;
-           
-        }
-
-        .progress-complete {
-            top: -100%;
-        }
-
-        .progress-complete .progress-bar,
-        .progress-complete .progress-text {
-            opacity: 0;
-            transition: opacity 0.25s ease;
-            
-        }
-
-        .progress-blocks {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin: 10px auto 10px auto;
-            
-        }
-
-        .block {
-            width: 18px;
-            height: 18px;
-            border: 2px solid #fff;
-            border-radius: 3px;
-            background: transparent;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-
-        .block.filled {
-            background: #00e676;
-            border-color: #00e676;
-        }
-
-        #section2 {
-            background: transparent;
-            padding: 40px 0 60px 0;
-        }
-        #section2 h3 {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #333c60;
-            font-family: 'Roboto', sans-serif;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            position: relative;
-        }
-        #section2 h3:after {
-            content: '';
-            display: block;
-            width: 120px;
-            height: 2px;
-            background: #907dda;
-            margin: 16px auto 0 auto;
-            border-radius: 2px;
-        }
-        .box_wrap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 32px 0;
-            margin-top: 32px;
-        }
-        .p_box {
-            background: #fff;
-            width: 32%;
-            min-width: 280px;
-            box-sizing: border-box;
-            border-radius: 6px;
-            box-shadow: none;
-            padding: 24px 18px 18px 18px;
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            transition: box-shadow 0.2s;
-        }
-        .p_box .img_box {
-            width: 100%;
-            margin-bottom: 18px;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .p_box .img_box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-        .p_box .overlay { display: none; }
-        .p_box span {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #333c60;
-            margin-bottom: 4px;
-        }
-        .p_box p {
-            font-size: 1rem;
-            color: #888;
-            margin-bottom: 0;
-        }
-        @media (max-width: 1024px) {
-            .box_wrap { flex-direction: column; align-items: center; }
-            .p_box { width: 90%; margin-bottom: 24px; }
-        }
-
-        #dots-bg {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            display: block;
-        }
+ 
     </style>
 
 </head>
@@ -314,10 +125,12 @@
                 <span id="typed" style="white-space:pre;"></span>
             </div>
             <style>
+                body{
+                    
+                }
                 iframe {
                     margin: 0;
                     padding: 0;
-
                 }
 
                 #background-iframe {
@@ -338,11 +151,11 @@
 
                 #earth-iframe {
                     position: absolute;
-                    top: 120px;
-                    left: 120px;
+                    top: 37.9%;
+                    left: 50%;
                     transform: translate(-50%, -50%);
-                    width: 200px;
-                    height: 200px;
+                    width: 300px;
+                    height: 300px;
                     border: none;
                     z-index: 1000;
                     border-radius: 50%;
@@ -521,19 +334,7 @@
     </div>
     <!-- //section_wrap -->
 
-    <!-- 스크립트 -->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/aos.js"></script>
-    <script src="./js/typed.js"></script>
-    <script src="./js/demos.js"></script>
 
-    <script>
-        AOS.init({
-            duration: 800,
-        });
-    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>

@@ -29,14 +29,14 @@ function setup(){
 	if(displayWidth > 800){ //computer
 		G = 0.3;
 		maxAttractRepuls = 12;
-		canvas = createCanvas(windowWidth-20, windowHeight);	
+		canvas = createCanvas(window.innerWidth, window.innerHeight);	
 		nbParticles = 1000;
-		rangeX = int(windowWidth/5);
-		responsiveFontSize = int(windowWidth/120);
-		responsiveFontSizeAlt = int(windowWidth/205);
-		responsiveOffSetTxt = int(windowWidth/96);
-		responsiveOffSetTxtAlt = int(windowWidth/128);
-		paddingLeft = int(windowWidth/38);
+		rangeX = int(window.innerWidth/5);
+		responsiveFontSize = int(window.innerWidth/120);
+		responsiveFontSizeAlt = int(window.innerWidth/205);
+		responsiveOffSetTxt = int(window.innerWidth/96);
+		responsiveOffSetTxtAlt = int(window.innerWidth/128);
+		paddingLeft = int(window.innerWidth/38);
 		for(var i = 1; i < 7; i++){
 			offsets.push(paddingLeft+70+responsiveOffSetTxt*i);
 		}
@@ -241,7 +241,17 @@ function showMoreInfos(){
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
+	if(displayWidth > 800) {
+		resizeCanvas(window.innerWidth, window.innerHeight);
+		rangeX = int(window.innerWidth/5);
+		responsiveFontSize = int(window.innerWidth/120);
+		responsiveFontSizeAlt = int(window.innerWidth/205);
+		responsiveOffSetTxt = int(window.innerWidth/96);
+		responsiveOffSetTxtAlt = int(window.innerWidth/128);
+		paddingLeft = int(window.innerWidth/38);
+	} else {
+		resizeCanvas(window.innerWidth, window.innerHeight);
+	}
 }
 
 function deviceTurned(){

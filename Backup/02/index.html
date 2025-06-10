@@ -58,7 +58,7 @@
 
 </head>
 
-<body id="page-top" onload="showSite()" style="margin:0;padding:0;overflow:hidden;">
+<body id="page-top" onload="showSite()" style="width:100%;margin:0;padding:0;overflow:hidden;position:fixed;">
     <canvas id="dots-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
 
   
@@ -73,7 +73,22 @@
 
 
   <script src="js/welcome-animation.js"></script>
- 
+  
+  <script>
+    // Canvas resize handler
+    function resizeCanvas() {
+      const canvas = document.getElementById('dots-bg');
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    }
+
+    // Initial resize
+    window.addEventListener('load', resizeCanvas);
+    // Resize on window change
+    window.addEventListener('resize', resizeCanvas);
+  </script>
 </body>
 
 
