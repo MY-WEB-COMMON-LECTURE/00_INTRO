@@ -1201,3 +1201,8 @@ footer address{
         font-size: 1.1rem;
     }
 }
+
+/* 활동[바로가기] info-item: make it span both columns */
+.info-list .info-item:has(a[href="#section5"]) {
+    grid-column: 1 / -1;
+}
