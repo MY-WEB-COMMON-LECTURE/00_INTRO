@@ -26,6 +26,7 @@
     <link rel="apple-touch-icon-precomposed" href="img/favicon-180.png">
     <link rel="icon" href="img/favicon-16.png">
 
+
     <!--[if IE 8]>
     <script type="text/javascript">
         alert("Please Upgrade Your BROWSER !");
@@ -242,7 +243,7 @@
             .box_wrap { flex-direction: column; align-items: center; }
             .p_box { width: 90%; margin-bottom: 24px; }
         }
-
+    
         #dots-bg {
             position: fixed;
             top: 0; left: 0;
@@ -338,11 +339,11 @@
 
                 #earth-iframe {
                     position: absolute;
-                    top: 120px;
-                    left: 120px;
+                    top: 38%;
+                    left: 50%;
                     transform: translate(-50%, -50%);
-                    width: 200px;
-                    height: 200px;
+                    width: 320px;
+                    height: 320px;
                     border: none;
                     z-index: 1000;
                     border-radius: 50%;
@@ -522,16 +523,22 @@
     <!-- //section_wrap -->
 
     <!-- 스크립트 -->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/aos.js"></script>
     <script src="./js/typed.js"></script>
+    <script src="./js/index.js"></script>
     <script src="./js/demos.js"></script>
 
     <script>
-        AOS.init({
-            duration: 800,
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+            }
         });
     </script>
 
