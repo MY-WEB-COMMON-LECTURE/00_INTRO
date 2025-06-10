@@ -1086,7 +1086,7 @@ footer address{
 #section6 .contact-info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 32px;
     margin-top: 80px;
     padding-bottom: 20px;
