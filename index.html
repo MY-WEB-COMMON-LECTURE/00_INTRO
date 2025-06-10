@@ -101,13 +101,16 @@
     <div id="nav_wrap">
         <div class="nav">
             <h1>
-                <a href="#">
+                <a href="#section1">
                     <span class="color1">HOME</span>
                 </a>
             </h1>
             <ul class="menu">
-                <li><a href="#section2">PROJECTS</a></li>
-                <li class="last"><a href="#">CONTACT</a></li>
+                <li><a href="#section2">ABOUT_ME</a></li>
+                <li class=""><a href="#section3">SKILLS</a></li>
+                <li><a href="#section4">COURSE</a></li>
+                <li><a href="#section5">PROJECTS</a></li>
+                <li class="last"><a href="#section6">CONTACT</a></li>
             </ul>
         </div>
     </div>
@@ -132,7 +135,9 @@
                     margin: 0;
                     padding: 0;
                 }
-
+                #section1{
+                    transition: all 0.5s ease;
+                }
                 #background-iframe {
                     position: absolute;
                     top: 0;
@@ -159,7 +164,13 @@
                     border: none;
                     z-index: 1000;
                     border-radius: 50%;
-                    display:none;
+                    opacity: 0;
+                    transition: all 0.5s ease;
+                }
+                #section1:hover #earth-iframe{
+                    opacity: 1;
+                    transition: all 0.5s ease;
+                   
                 }
 
                 .active{
@@ -191,10 +202,44 @@
         <!-- //section1 -->
 
         <!-- section2 -->
-        <div id="section2">
+        <section id="section2">
+            <div class="container2">
+                <h3 id="section2H3">ABOUT_ME</h3>
+                <div class="box_wrap">
+                    <!-- Content will be added here -->
+                </div>
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <!-- section3 -->
+        <section id="section3">
+            <div class="container3">
+                <h3 id="section2H3">SKILLS</h3>
+                <div class="box_wrap">
+                    <!-- Content will be added here -->
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+
+        <!-- section4 -->
+        <section id="section4">
+            <div class="container4">
+                <h3 id="section2H3">COURSE</h3>
+                <div class="box_wrap">
+                    <!-- Content will be added here -->
+                </div>
+            </div>
+        </section>
+        <!-- //section4 -->
+
+
+        <!-- section5 -->
+        <div id="section5">
            
             <div class="container2">
-                <h3 id="section2H3">PORTFOLIO</h3>
+                <h3 id="section2H3">PROJECTS</h3>
                 <div class="box_wrap">
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
@@ -261,76 +306,68 @@
                         <span>웹표준 사이트</span>
                         <p>준비중입니다.</p>
                     </div>
+                    <div class="p_box last item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="#">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>준비중입니다.</p>
+                    </div>
+                    <div class="p_box last item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="#">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>준비중입니다.</p>
+                    </div>
+                    <div class="p_box last item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="#">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>준비중입니다.</p>
+                    </div>
+                    <div class="p_box last item" data-aos="fade-up">
+                        <div class="img_box">
+                            <a href="#"><img src="img/boxbg.png" alt="사이트"></a>
+                            <div class="overlay">
+                                <a class="info" href="#">Site 바로가기</a>
+                            </div>
+                        </div>
+                        <span>웹표준 사이트</span>
+                        <p>준비중입니다.</p>
+                    </div>
                 </div>
                 <!-- //box_wrap -->
             </div>
             <!-- //container2 -->
         </div>
         <style>
-        .box_wrap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .p_box {
-            width: 30%;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        .p_box .img_box {
-            position: relative;
-            overflow: hidden;
-        }
-        .p_box .img_box img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        .p_box .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .p_box:hover .overlay {
-            opacity: 1;
-        }
-        .p_box .info {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .p_box span {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        .p_box p {
-            margin-top: 5px;
-            color: #666;
-        }
+      
         </style>
 
         <!-- section3 -->
-        <div id="section3">
-            <div class="container3">
+        <footer id="footer">
+            <div class="">
                 <address>
                     <ul>
                         <li>Tel : 010-2375-3058</li>
-                        <li>Kakao : -</li>
+                        <li>Kakao : jwg1323</li>
                     </ul>
                     Copyright @ 2025 by <span class="color0">-</span><span class="color1">-</span> All Right
                     Reserved
                 </address>
             </div>
-        </div>
+        </footer>
         <!-- //section3 -->
     </div>
     <!-- //section_wrap -->

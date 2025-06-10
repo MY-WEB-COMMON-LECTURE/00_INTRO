@@ -325,43 +325,24 @@ function startAutoAttractorTimer() {
     }, 10000); // 10 seconds
 }
 
-function mousePressed(){
-	// Update last interaction time
-	lastInteractionTime = Date.now();
-	
-	// Clear existing attractors
-	attractors = [];
-	
-	// Restart auto-attractor timer
-	startAutoAttractorTimer();
-	
-	if(windowWidth > 600){
-		if(attractors.length + repulsors.length < maxAttractRepuls){
-			if(mouseX > rangeX && mouseX < window.innerWidth - rangeX){
-				if(mouseY > rangeY && mouseY < window.innerHeight - rangeY){
-					if(bool){
-						attractors.push(new Attractor(mouseX,mouseY))
-					}
-					else{
-						repulsors.push(new Repulsor(mouseX,mouseY));
-					}
-				}
-			}
-		}
-	}else{
-		if(attractors.length + repulsors.length < maxAttractRepuls){
-			if(mouseX > rangeX && mouseX < windowWidth - rangeX){
-				if(mouseY > rangeY && mouseY < windowHeight - rangeY - windowHeight/3){
-					if(bool){
-						attractors.push(new Attractor(mouseX,mouseY))
-					}
-					else{
-						repulsors.push(new Repulsor(mouseX,mouseY));
-					}
-				}
-			}
-		}
-	}
+function mousePressed() {
+    // Update last interaction time
+    lastInteractionTime = Date.now();
+    
+    if(windowWidth > 600){
+        if(attractors.length + repulsors.length < maxAttractRepuls){
+            if(mouseX > rangeX && mouseX < window.innerWidth - rangeX){
+                if(mouseY > rangeY && mouseY < window.innerHeight - rangeY){
+                    if(bool){
+                        attractors.push(new Attractor(mouseX,mouseY))
+                    }
+                    else{
+                        repulsors.push(new Repulsor(mouseX,mouseY));
+                    }
+                }
+            }
+        }
+    }
 }
 
 function keyPressed(){

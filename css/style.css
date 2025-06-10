@@ -1,4 +1,7 @@
 /* 전체 */
+*{
+    box-sizing: border-box;
+}
 body {
     font-family: 'Noto Sans KR', sans-serif;
     margin : 0;
@@ -147,6 +150,11 @@ body::-webkit-scrollbar{
 html {
     scroll-behavior: smooth;
   }
+
+
+section{
+    height : 100%;
+}
 /* section1 */
 #section1 {
     position: relative;
@@ -217,22 +225,23 @@ html {
     z-index: 3000;
 }
 
-/* section2 */
-#section2 {
+/* section5 */
+#section5 {
     width: 100%;
+    height : 100%;
     border-top: 1px solid #ddd;
     background: url(../img/portbg.png);
     background-size: cover;
 }
 
-#section2 .container2 {
+#section5 .container2 {
     width: 1200px;
-    height: 1000px;
+    height : 100%;
     margin: 0 auto;
     overflow: hidden;
 }
 
-#section2 h3 {
+#section5 h3 {
     position: relative;
     text-align: center;
     font-size: 20px;
@@ -243,46 +252,42 @@ html {
     letter-spacing: 0.8px;
 }
 
-#section2 h3:after {
-    content: '';
-    width: 120px;
-    height: 2px;
-    background-color: #907dda;
-    position: absolute;
-    left: 50%;
-    top: 95px;
-    margin-left: -60px;
-}
 
-#section2 .box_wrap {
+
+#section5 .box_wrap {
     width: 1200px;
-    height: 1000px;
-    margin-top: 60px;
+    height : 100%;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+    margin:0;padding:0;
+   overflow:hidden;
 }
 
-#section2 .box_wrap .p_box {
+#section5 .box_wrap .p_box {
     position: relative;
     width: 384px;
     height: 370px;
     background-color: #fff;
-    float: left;
+
     border: 1px solid #ddd;
-    margin-right: 21px;
-    margin-bottom: 21px;
+    /* margin-right: 21px;
+    margin-bottom: 21px; */
     overflow: hidden;
 }
 
-#section2 .box_wrap .last {margin-right: 0;}
+#section5 .box_wrap .last {margin-right: 0;}
 
-#section2 .box_wrap .p_box .img_box {
+#section5 .box_wrap .p_box .img_box {
     position: relative;
-    width: 384px;
+    width: 100%;
     height: 250px;
     background-color: yellow;
     overflow: hidden;
 }
 
-#section2 .box_wrap .p_box .img_box img {
+#section5 .box_wrap .p_box .img_box img {
     position:relative;
     width: 100%;
     height: 100%;
@@ -291,7 +296,7 @@ html {
     opacity: .5;
 }
 
-#section2 .box_wrap .p_box .img_box .overlay {
+#section5 .box_wrap .p_box .img_box .overlay {
     position:absolute;
     top: 0;
     left: 0;
@@ -304,7 +309,7 @@ html {
     transition:all .4s ease-in-out;
 }
 
-#section2 .box_wrap .p_box .img_box .overlay .info {
+#section5 .box_wrap .p_box .img_box .overlay .info {
     display:inline-block;
     text-transform:uppercase;
     color:#fff;
@@ -316,13 +321,13 @@ html {
     -webkit-transition:all .2s ease-in-out;
     transition:all .2s ease-in-out;
 }
-#section2 .box_wrap .p_box .img_box:hover img {transform:scale(1.2);}
-#section2 .box_wrap .p_box .img_box:hover .info {opacity:1; transform:translatey(0); transition-delay:.1s;}
-#section2 .box_wrap .p_box .img_box .overlay:hover {opacity:1;}
-#section2 .box_wrap .p_box .img_box .overlay .info:hover {box-shadow:0 0 5px #fff;}
+#section5 .box_wrap .p_box .img_box:hover img {transform:scale(1.2);}
+#section5 .box_wrap .p_box .img_box:hover .info {opacity:1; transform:translatey(0); transition-delay:.1s;}
+#section5 .box_wrap .p_box .img_box .overlay:hover {opacity:1;}
+#section5 .box_wrap .p_box .img_box .overlay .info:hover {box-shadow:0 0 5px #fff;}
 
 
-#section2 .box_wrap .p_box span {
+#section5 .box_wrap .p_box span {
     display: block;
     padding-top: 20px;
     padding-left: 20px;
@@ -330,7 +335,7 @@ html {
     color: #4e4e4e;
 }
 
-#section2 .box_wrap .p_box p {
+#section5 .box_wrap .p_box p {
     padding-top: 5px;
     padding-left: 20px;
     color: #999;
@@ -508,11 +513,11 @@ html {
     border-color: #00e676;
 }
 
-#section2 {
+#section5 {
     background: transparent;
     padding: 40px 0 60px 0;
 }
-#section2 h3 {
+#section5 h3 {
     text-align: center;
     font-size: 2.2rem;
     color: #333c60;
@@ -522,7 +527,7 @@ html {
     letter-spacing: 1px;
     position: relative;
 }
-#section2 h3:after {
+#section5 h3:after {
     content: '';
     display: block;
     width: 120px;
@@ -591,6 +596,131 @@ html {
     display: block;
 }
 
+/* Common section styles */
+#section2, #section3, #section4 {
+    width: 100%;
+    background: transparent;
+    padding: 40px 0 60px 0;
+}
+
+#section2 .container2, #section3 .container3, #section4 .container4 {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.box_wrap{
+    border: 1px solid red;
+    height : 100%;
+    min-height: 800px !important;
+    position: relative;
+    top:50px;
+
+}
+
+#section2 h3, #section3 h3, #section4 h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333c60;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    position: relative;
+    top:50px;
+    z-index: 3000;
+}
+
+#section2 h3:after, #section3 h3:after, #section4 h3:after #section5 h3:after{
+    content: '';
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #907dda;
+    margin: 16px auto 0 auto;
+    border-radius: 2px;
+}
+
+#section2 .box_wrap, #section3 .box_wrap, #section4 .box_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px 0;
+    margin-top: 32px;
+}
+
+@media (max-width: 1024px) {
+    #section2 .box_wrap, #section3 .box_wrap, #section4 .box_wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 
 
+
+.box_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.p_box {
+    width: 30%;
+    margin-bottom: 30px;
+    position: relative;
+}
+.p_box .img_box {
+    position: relative;
+    overflow: hidden;
+}
+.p_box .img_box img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.p_box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.p_box:hover .overlay {
+    opacity: 1;
+}
+.p_box .info {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.p_box span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.p_box p {
+    margin-top: 5px;
+    color: #666;
+}
+
+
+footer{
+
+    min-height : 100px;
+    background-color:cadetblue;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    position: relative;
+    width : 100%;
+}
