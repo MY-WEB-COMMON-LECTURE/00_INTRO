@@ -358,22 +358,16 @@ section{
 }
 
 #section3 .box_wrap {
-    display: flex !important;
-    justify-content: left !important;
-    gap: 20px !important;
-    height : 100% !important;
-    margin :0 !important;
+
 }
 
 #section3 .p_box {
-    width : 200px !important;
-    height : 100% !important;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+    
+    width : 100% !important;
 }
+
+
+
 #section3 .p_box.item {
     width: 100%; /* grid가 조절하므로 개별 너비 지정하지 않음 */
     box-sizing: border-box;
@@ -397,8 +391,8 @@ section{
 }
 
 #section3 .p_box .img_box img {
-    max-width: 70%;
-    max-height: 70%;
+    width : 100%;
+    height : 100%;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -429,6 +423,8 @@ section{
 .skill-category {
     margin-bottom: 50px;
     position: relative;
+    width : 1200px;
+
 }
 
 .skill-category h4 {
@@ -451,13 +447,15 @@ section{
 }
 
 #section3 .skill-category .box_wrap {
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 10px;
+    width : 1200px !important;
+    display:flex;
     margin-top: 20px;
+    gap:20px;
 }
 
 #section3 .skill-category .p_box.item.aos-init {
+    width:200px !important;
+   
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -468,6 +466,7 @@ section{
 }
 
 .skill-category .p_box:hover {
+    
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
@@ -715,7 +714,9 @@ section{
     gap: 32px 0;
     margin-top: 32px;
 }
-.p_box {
+#section4 .p_box,
+#section5 .p_box  
+{
     background: #fff;
     width: 32%;
     min-width: 280px;
@@ -728,6 +729,13 @@ section{
     flex-direction: column;
     align-items: flex-start;
     transition: box-shadow 0.2s;
+
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
 }
 .p_box .img_box {
     width: 100%;
@@ -826,11 +834,11 @@ section{
     justify-content: left;
     gap: 32px;
     margin-top: 32px;
-    padding-bottom:20px;
+    padding-bottom:50px;
 }
 
 #section4 .box_wrap .p_box{
-    border : 1px solid lightgray;
+    /* border : 1px solid lightgray; */
     width: 30%;
     margin-bottom: 30px;
     position: relative;
@@ -841,7 +849,7 @@ section{
 #section4 .box_wrap .p_box .ncs-button{
     position: absolute;
     bottom: 5px;
-    right: 5px;
+    right: 10px;
     
     padding: 5px;
     border-radius: 5px;
@@ -1127,5 +1135,4 @@ footer address{
         min-width: 0;
         margin-bottom: 24px;
     }
-}
 }
