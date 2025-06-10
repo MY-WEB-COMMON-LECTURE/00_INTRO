@@ -114,6 +114,9 @@ function setup(){
 		for(var i = 0; i < nbParticles; i++){
 			particles.push(new Particle(random(0, window.innerWidth), random(0, window.innerHeight)));
 		}
+
+		// Start auto-attractor timer for mobile
+		startAutoAttractorTimer();
 	}
 
 	//rangeX = displayHeight/2;
