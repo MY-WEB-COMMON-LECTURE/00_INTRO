@@ -24,6 +24,8 @@ var maxAttractRepuls;
 var gSlider;
 var sliderVisible;
 var alphaChange;
+var lastInteractionTime = 0;
+var autoAttractorTimeout;
 
 function setup(){	
 	if(displayWidth > 800){ //computer
@@ -44,8 +46,11 @@ function setup(){
 			offsetsAlt.push(offsets[5]+responsiveOffSetTxtAlt*i);
 		}
 		for(var i = 0; i < nbParticles; i++){
-			particles.push(new Particle(random(0, windowWidth), random(0, windowHeight)));
+			particles.push(new Particle(random(0, window.innerWidth), random(0, window.innerHeight)));
 		}
+
+		// Start auto-attractor timer
+		startAutoAttractorTimer();
 
 		if(windowWidth > 800){
 			button = createButton('Switch mode');
@@ -59,7 +64,7 @@ function setup(){
 
 			button2 = createButton('Add particles');
 			button2.position(paddingLeft, offsetsAlt[4]+windowWidth/40);
-			button2.mousePressed(addParticle);
+			button2.mousePressed(addParticles);
 			button2.style('background-color:black');
 			button2.style('border:1px solid #def0de');
 			button2.style('color:#def0de');
@@ -183,11 +188,11 @@ function switchMode() {
 	}
 }
 
-function addParticle(){
-	if(particles.length <= 3500){
-		for(var i = 0; i < 500; i++){
-			particles.push(new Particle(random(rangeX, windowWidth - rangeX), random(rangeY, windowHeight - rangeY)));
-		}
+function addParticles(){
+	for(var i = 0; i < 100; i++){
+		var x = random(0, window.innerWidth);
+		var y = random(0, window.innerHeight);
+		particles.push(new Particle(x, y));
 	}
 }
 
@@ -298,11 +303,42 @@ function drawTxt(){
 	pop();
 }
 
+function startAutoAttractorTimer() {
+    // Clear any existing timeout
+    if (autoAttractorTimeout) {
+        clearTimeout(autoAttractorTimeout);
+    }
+    
+    // Set new timeout
+    autoAttractorTimeout = setTimeout(function() {
+        if (attractors.length === 0) {
+            // Create random attractor positions
+            var x1 = random(rangeX, window.innerWidth - rangeX);
+            var y1 = random(rangeY, window.innerHeight - rangeY);
+            var x2 = random(rangeX, window.innerWidth - rangeX);
+            var y2 = random(rangeY, window.innerHeight - rangeY);
+            
+            // Add attractors
+            attractors.push(new Attractor(x1, y1));
+            attractors.push(new Attractor(x2, y2));
+        }
+    }, 10000); // 10 seconds
+}
+
 function mousePressed(){
+	// Update last interaction time
+	lastInteractionTime = Date.now();
+	
+	// Clear existing attractors
+	attractors = [];
+	
+	// Restart auto-attractor timer
+	startAutoAttractorTimer();
+	
 	if(windowWidth > 600){
 		if(attractors.length + repulsors.length < maxAttractRepuls){
-			if(mouseX > rangeX && mouseX < windowWidth - rangeX){
-				if(mouseY > rangeY && mouseY < windowHeight - rangeY){
+			if(mouseX > rangeX && mouseX < window.innerWidth - rangeX){
+				if(mouseY > rangeY && mouseY < window.innerHeight - rangeY){
 					if(bool){
 						attractors.push(new Attractor(mouseX,mouseY))
 					}
