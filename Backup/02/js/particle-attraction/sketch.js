@@ -53,7 +53,7 @@ function setup(){
 		startAutoAttractorTimer();
 
 		if(windowWidth > 800){
-			button = createButton('Switch mode');
+			button = createButton('모드 변경');
 			button.position(paddingLeft, offsetsAlt[3]);
 			button.mousePressed(switchMode);
 			button.style('background-color:black');
@@ -62,7 +62,7 @@ function setup(){
 			button.style('font-size:'+responsiveFontSize-7+'px');
 			button.style('font-family:Andale Mono');
 
-			button2 = createButton('Add particles');
+			button2 = createButton('STAR 추가');
 			button2.position(paddingLeft, offsetsAlt[4]+windowWidth/40);
 			button2.mousePressed(addParticles);
 			button2.style('background-color:black');
@@ -71,7 +71,7 @@ function setup(){
 			button2.style('font-size:'+responsiveFontSize-7+'px');
 			button2.style('font-family:Andale Mono');
 
-			button3 = createButton('Display infos');
+			button3 = createButton('정보 확인');
 			button3.position(paddingLeft, offsetsAlt[5]+2*(windowWidth/40));
 			button3.mousePressed(triggerInfos);
 			button3.style('background-color:black');
@@ -80,7 +80,7 @@ function setup(){
 			button3.style('font-size:'+responsiveFontSize-7+'px');
 			button3.style('font-family:Andale Mono');
 
-			button4 = createButton('Reset');
+			button4 = createButton('RESET');
 			button4.position(paddingLeft, offsetsAlt[6]+3*(windowWidth/40));
 			button4.mousePressed(resetCanvas);
 			button4.style('background-color:black');
