@@ -97,14 +97,14 @@ function setup(){
 	}else{ //phone
 		G = 0.15;
 		maxAttractRepuls = 7;
-		canvas = createCanvas(displayWidth-20, displayHeight);
+		canvas = createCanvas(window.innerWidth, window.innerHeight);
 		nbParticles = 300;
-		rangeX = int(displayWidth/5);
-		responsiveFontSize = int(displayWidth/120);
-		responsiveFontSizeAlt = int(displayWidth/300);
-		responsiveOffSetTxt = int(displayWidth/96);
-		responsiveOffSetTxtAlt = int(displayWidth/128);
-		paddingLeft = int(displayWidth/24);
+		rangeX = int(window.innerWidth/5);
+		responsiveFontSize = int(window.innerWidth/120);
+		responsiveFontSizeAlt = int(window.innerWidth/300);
+		responsiveOffSetTxt = int(window.innerWidth/96);
+		responsiveOffSetTxtAlt = int(window.innerWidth/128);
+		paddingLeft = int(window.innerWidth/24);
 		for(var i = 1; i < 7; i++){
 			offsets.push(paddingLeft+responsiveOffSetTxt*i);
 		}
@@ -112,7 +112,7 @@ function setup(){
 			offsetsAlt.push(offsets[offsets.length]+3+responsiveOffSetTxtAlt*i);
 		}
 		for(var i = 0; i < nbParticles; i++){
-			particles.push(new Particle(random(0, displayWidth), random(0, displayHeight)));
+			particles.push(new Particle(random(0, window.innerWidth), random(0, window.innerHeight)));
 		}
 	}
 
