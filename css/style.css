@@ -372,6 +372,12 @@ section{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
+#section3 .p_box.item {
+    width: 100%; /* grid가 조절하므로 개별 너비 지정하지 않음 */
+    box-sizing: border-box;
+}
+
+
 
 #section3 .p_box:hover {
     transform: translateY(-5px);
@@ -443,10 +449,10 @@ section{
 }
 
 #section3 .skill-category .box_wrap {
-    margin: 50px 0;
-    display: grid !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
 }
 
 #section3 .skill-category .p_box.item.aos-init {
@@ -456,8 +462,7 @@ section{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     padding: 3px;
-    width: 150px !important;
-    height: 180px !important;
+
 }
 
 .skill-category .p_box:hover {
@@ -510,20 +515,20 @@ section{
 }
 
 @media (max-width: 1200px) {
-    #section3 .skill-category .box_wrap {
-        grid-template-columns: repeat(4, 1fr) !important;
+    .skill-category .box_wrap {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 992px) {
-    #section3 .skill-category .box_wrap {
-        grid-template-columns: repeat(3, 1fr) !important;
+    .skill-category .box_wrap {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    #section3 .skill-category .box_wrap {
-        grid-template-columns: repeat(2, 1fr) !important;
+    .skill-category .box_wrap {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .skill-category h4 {
@@ -536,8 +541,8 @@ section{
 }
 
 @media (max-width: 480px) {
-    #section3 .skill-category .box_wrap {
-        grid-template-columns: 1fr !important;
+    .skill-category .box_wrap {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -750,6 +755,13 @@ section{
     .box_wrap { flex-direction: column; align-items: center; }
     .p_box { width: 90%; margin-bottom: 24px; }
 }
+
+@media (min-width: 1200px) {
+    #section3 .skill-category .box_wrap {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 
 #dots-bg {
     position: fixed;
