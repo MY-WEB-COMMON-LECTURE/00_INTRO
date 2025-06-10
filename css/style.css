@@ -1170,16 +1170,20 @@ footer address{
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    color: #907dda;
+    color: darkcyan;
     font-size: 1.5rem;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     border: 2px solid #eee;
 }
+.quick-menu a i {
+    font-weight: 400;
+    /* Font Awesome regular is thinner by default */
+}
 .quick-menu a:hover, .quick-menu a:focus {
-    background: #907dda;
+    background: darkcyan;
     color: #fff;
-    box-shadow: 0 4px 16px rgba(144,125,218,0.18);
-    border-color: #907dda;
+    box-shadow: 0 4px 16px rgba(0,139,139,0.18);
+    border-color: darkcyan;
 }
 @media (max-width: 768px) {
     .quick-menu {
