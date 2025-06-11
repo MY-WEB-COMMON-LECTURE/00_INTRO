@@ -1,0 +1,102 @@
+{
+  "2024": [
+    {
+      "id": "2024-1",
+      "title": "NETFLEX CLONE CODING",
+      "description": "NETFLEX 싸이트 따라하기(HTML/CSS)",
+      "image": "img/project/clone/01.png",
+      "link": "https://all-my-projects-2024.github.io/01_CSS_NETFLEX/",
+      "type": "웹사이트"
+    },
+    {
+      "id": "2024-2",
+      "title": "PROGRAMMERS CLONE CODING",
+      "description": "PROGRAMMERS 싸이트 따라하기(HTML/CSS)",
+      "image": "img/project/clone/02.png",
+      "link": "https://all-my-projects-2024.github.io/01_PROGRAMMERS/",
+      "type": "웹사이트"
+    },
+    {
+      "id": "2024-3",
+      "title": "TODO(VANILLA JS)",
+      "description": "Vanilla JS로 만든 TODO 앱",
+      "image": "img/project/js/01.png",
+      "link": "https://all-my-projects-2024.github.io/TODO_VanillaJS/",
+      "type": "웹사이트"
+    },
+    {
+      "id": "2024-4",
+      "title": "TODO(REACTJS)",
+      "description": "REACTJS로 만든 TODO 앱",
+      "image": "img/project/react/01.png",
+      "link": "https://all-my-projects-2024.github.io/TODO_ReactJS/",
+      "type": "웹사이트"
+    },
+    {
+      "id": "2024-5",
+      "title": "모바일 청첩장",
+      "description": "JS로 만든 모바일 청첩장",
+      "image": "img/project/js/02.png",
+      "link": "https://all-my-projects-2024.github.io/02_JS_WEDDING/",
+      "type": "모바일앱"
+    },
+    {
+      "id": "2024-6",
+      "title": "위젯싸이트",
+      "description": "위젯만들기",
+      "image": "img/project/js/03.png",
+      "link": "https://all-my-projects-2024.github.io/Widget_by_VanillaJS/",
+      "type": "웹싸이트"
+    },
+    {
+      "id": "2024-7",
+      "title": "너구리 게임",
+      "description": "THREEJS+BLANDER를 활용한 너구리 게임",
+      "image": "img/project/js/04.png",
+      "link": "https://all-my-projects-2024.github.io/03_JS_LIB_RACOON/",
+      "type": "웹사이트"
+    },
+    {
+      "id": "2024-8",
+      "title": "부산 해운대구 빌딩풍 재해 감지 예측 시스템",
+      "description": "With YOLOv7",
+      "image": "img/boxbg.png",
+      "link": "#",
+      "type": "MODAL"
+    },
+    {
+      "id": "2024-9",
+      "title": "부산 재난 대비 CCTV 침수 위험 감지 시스템",
+      "description": "With YOLOv7",
+      "image": "img/boxbg.png",
+      "link": "#",
+      "type": "MODAL"
+    }
+  ],
+  "2025": [
+    {
+      "id": "2025-1",
+      "title": "전자달력/전자액자 WEB/APP",
+      "description": "웹/앱 통합 시스템",
+      "image": "img/boxbg.png",
+      "link": "#",
+      "type": "MODAL"
+    },
+    {
+      "id": "2025-2",
+      "title": "프로젝트별 CBT 시스템",
+      "description": "OPEN AI 를 활용한 문제 자동생성",
+      "image": "img/boxbg.png",
+      "link": "#",
+      "type": "MODAL"
+    },
+    {
+      "id": "2025-3",
+      "title": "가계부 웹앱 시스템",
+      "description": "SMS를 활용한 소비내역 자동 업데이트",
+      "image": "img/boxbg.png",
+      "link": "#",
+      "type": "MODAL"
+    }
+  ]
+}

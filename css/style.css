@@ -318,13 +318,13 @@ section{
     display:inline-block;
     text-transform:uppercase;
     color:#fff;
-    border: 1px solid #fff;
     margin-top: 115px;
     margin-left: 138.5px;
     padding: 7px 14px;
     opacity:0;
     -webkit-transition:all .2s ease-in-out;
     transition:all .2s ease-in-out;
+    background-color: darkcyan;;
 }
 #section5 .box_wrap .p_box .img_box:hover img {transform:scale(1.2);}
 #section5 .box_wrap .p_box .img_box:hover .info {opacity:1; transform:translatey(0); transition-delay:.1s;}
