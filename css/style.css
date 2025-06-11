@@ -1206,3 +1206,20 @@ footer address{
 .info-list .info-item:has(a[href="#section5"]) {
     grid-column: 1 / -1;
 }
+
+#projectModal{
+    overflow: auto;;
+}
+#projectModal .modal-content{
+    top:0;
+    min-width:1000px;
+    max-height:600px;
+    overflow:auto !important;
+}
+#modalContent{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}

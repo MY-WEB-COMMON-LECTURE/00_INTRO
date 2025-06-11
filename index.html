@@ -907,7 +907,7 @@
                         // 해당 연도의 프로젝트 추가
                         data[year].forEach(project => {
                             const link = project.type === "MODAL" ? "javascript:void(0)" : project.link;
-                            const onClick = project.type === "MODAL" ? `onclick="openModal('${project.title}', '${project.description}'); return false;"` : "";
+                            const onClick = project.type === "MODAL" ? `onclick="openModal('${project.id}'); return false;"` : "";
                             const target = project.type === "MODAL" ? "" : "target='_blank'";
                             
                             yearDiv.querySelector('.box_wrap').innerHTML += `
@@ -935,10 +935,45 @@
             const closeBtn = document.getElementsByClassName('close')[0];
 
             // 모달 열기
-            function openModal(title, description) {
-                document.getElementById('modalTitle').textContent = title;
-                document.getElementById('modalDescription').textContent = description;
-                modal.style.display = "block";
+            async function openModal(projectId) {
+                try {
+                    const response = await fetch('dataset/project_modal_contents.json');
+                    const modalContents = await response.json();
+                    const content = modalContents[projectId];
+
+                    if (content) {
+                        const modalContent = document.querySelector('.modal-content');
+                        modalContent.innerHTML = `
+                            <span class="close">&times;</span>
+                            <h2 id="modalTitle">${content.title || ''}</h2>
+                            <div id="modalContent"></div>
+                        `;
+
+                        const modalContentDiv = document.getElementById('modalContent');
+                        
+                        if (content.type === 'image' && content.list && content.list.length > 0) {
+                            content.list.forEach(imagePath => {
+                                const img = document.createElement('img');
+                                img.src = imagePath;
+                                img.style.width = '100%';
+                                img.style.marginBottom = '20px';
+                                modalContentDiv.appendChild(img);
+                            });
+                        } else {
+                            modalContentDiv.innerHTML = content.content;
+                        }
+
+                        // 닫기 버튼 이벤트 리스너 재설정
+                        const newCloseBtn = modalContent.querySelector('.close');
+                        newCloseBtn.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                    }
+                    
+                    modal.style.display = "block";
+                } catch (error) {
+                    console.error('모달 콘텐츠 로드 중 오류 발생:', error);
+                }
             }
 
             // 모달 닫기 버튼 클릭 이벤트

@@ -59,7 +59,7 @@
     {
       "id": "2024-8",
       "title": "부산 해운대구 빌딩풍 재해 감지 예측 시스템",
-      "description": "With YOLOv7",
+      "description": "예측모델사용",
       "image": "img/boxbg.png",
       "link": "#",
       "type": "MODAL"
@@ -68,6 +68,14 @@
       "id": "2024-9",
       "title": "부산 재난 대비 CCTV 침수 위험 감지 시스템",
       "description": "With YOLOv7",
+      "image": "img/project/bn/2024-08.png",
+      "link": "#",
+      "type": "MODAL"
+    },
+    {
+      "id": "2024-10",
+      "title": "OPENAI를 활용한 생성이미지 경매 싸이트",
+      "description": "다양한 생성형 모델 사용",
       "image": "img/boxbg.png",
       "link": "#",
       "type": "MODAL"
