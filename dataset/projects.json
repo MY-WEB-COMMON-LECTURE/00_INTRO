@@ -68,7 +68,7 @@
       "id": "2024-9",
       "title": "부산 재난 대비 CCTV 침수 위험 감지 시스템",
       "description": "With YOLOv7",
-      "image": "img/project/bn/2024-08.png",
+      "image": "img/project/bn/2024-8.png",
       "link": "#",
       "type": "MODAL"
     },
@@ -84,16 +84,16 @@
   "2025": [
     {
       "id": "2025-1",
-      "title": "전자달력/전자액자 WEB/APP",
-      "description": "웹/앱 통합 시스템",
-      "image": "img/boxbg.png",
+      "title": "프로젝트별 CBT 시스템",
+      "description": "OPEN AI 를 활용한 문제 자동생성",
+      "image": "img/project/bn/2025-1.png",
       "link": "#",
       "type": "MODAL"
     },
     {
       "id": "2025-2",
-      "title": "프로젝트별 CBT 시스템",
-      "description": "OPEN AI 를 활용한 문제 자동생성",
+      "title": "전자달력/전자액자 WEB/APP",
+      "description": "웹/앱 통합 시스템",
       "image": "img/boxbg.png",
       "link": "#",
       "type": "MODAL"
