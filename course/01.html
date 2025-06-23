@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+
+
+
+
+    <style>
+       
+        * {
+            box-sizing: border-box;
+            font-size: clamp(.7rem, 1.3vw, 1rem);
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        h5,
+        h6 {
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: darkcyan;
+            color: white;
+            min-width: 250px;
+        }
+
+        h6 {
+            margin: 5px auto;
+        }
+
+        td,
+        th {
+
+            text-align: center;
+        }
+
+        .layout-150 {
+            /* padding : 0 150px; */
+        }
+
+        .table {
+            min-width: 250px;
+        }
+
+
+        /* 기본설정들 */
+        .wrapper {}
+
+        .wrapper>header {
+            height: 80px;
+            background-color: rgb(170, 168, 168);
+            ;
+        }
+
+        .wrapper>header>.top-header {}
+
+        .wrapper>header>nav {}
+
+        .wrapper>main {
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: start;
+            padding : 10px;
+        }
+
+        .wrapper>main>aside {
+            width: 5vw;
+            min-width: 35px;
+            height: auto;
+            border-radius: 3px;
+            padding: 5px;
+
+
+            position: fixed;
+            left: 1.2vw;
+            top: calc(50% - 170px);
+
+
+
+        }
+
+        .wrapper>main>aside>ul {
+            /* border : 1px solid; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            height: 100%;
+
+            position: relative;
+        }
+
+        .wrapper>main>aside>ul::before {
+
+            position: absolute;
+            left: 0;
+            top: -25px;
+            display: block;
+            width: 100%;
+            font-size: .8rem;
+            content: '🕖';
+            text-align: center;
+        }
+
+        .wrapper>main>aside>ul>li {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background-color: darkcyan;
+
+            margin: 2px;
+            border-radius: 5px;
+
+        }
+
+        .wrapper>main>aside>ul>li>a {
+            font-size: .65rem;
+            color: white;
+        }
+
+        .wrapper>main>section {
+           width : 100%;
+
+        }
+
+        .wrapper>main>section>div {
+
+            margin-top: 10px;
+        }
+
+        .wrapper>footer {}
+
+
+
+
+
+
+        .intruduce {
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .intruduce>.profile-image {
+            /* border : 1px solid; */
+
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            border: 1px solid lightgray;
+            position: relative;
+
+
+
+
+        }
+
+        .intruduce>.profile-image img {
+
+            object-fit: contain;
+
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+
+        }
+
+        .intruduce>.content {
+            padding: 5px;
+            /* border : 1px solid; */
+
+            width: 100%;
+        }
+
+        table td div {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+
+        table td div:nth-child(1) {
+            margin-bottom: 7px;
+            font-size: clamp(.6rem, 1.3vw, 1rem);
+            box-shadow: 5px 5px 5px lightgray;
+        }
+
+        table td div:nth-child(2) {
+            max-width: 100%;
+            position: relative;
+        }
+
+        table td div:nth-child(2) img {
+            width: 100%;
+            height: 10vh;
+            object-fit: contain;
+            position: relative;
+            left: 0px;
+            top: 0;
+
+            margin: 0 auto;
+
+        }
+
+        .curriculum {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 10px;
+
+        }
+
+        .curriculum th,
+        .curriculum td {
+            text-align: left;
+            font-size: .8rem
+        }
+
+        .curriculum .left .info th,
+        .curriculum .left .info td {
+            text-align: center;
+            border: 1px solid lightgray;
+        }
+
+        .curriculum .left .info>div {
+            margin-bottom: 20px;
+
+        }
+
+        .warning-info li {
+            font-size: 1.5rem;
+
+
+        }
+
+        .warning-info li span {
+            font-size: 1.5rem;
+            font-weight: 800;
+
+        }
+
+        .my {
+            padding-top: 20px;
+
+        }
+
+        .my h3 {
+            margin: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+    <div class="wrapper">
+        <main class="">
+            
+           
+            <section>
+                <h5 id="tag1">과정설명</h5>
+                <div>
+
+                </div>
+                <!-- 핵심모듈 -->
+                <h5 id="tag5">핵심모듈</h5>
+                <div>
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    1 화면 기획
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse "
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <div>
+                                        <table class="table">
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">설명</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    화면 설계(UI 설계)란 웹사이트나 웹 애플리케이션의 사용자 인터페이스를 계획하고 디자인하는 과정을 의미합니다.<br>
+                                                    이 과정은 사용자가 웹사이트를 쉽게 탐색하고 사용할 수 있도록 직관적이고 효율적인 레이아웃을 만드는 것을 목표로 합니다
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">세부항목</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    <hr>
+                                                    <strong>1. 요구사항 분석</strong><br>
+                                                    <hr>
+                                                    목표 설정: 프로젝트의 목표와 사용자의 요구사항을 명확히 정의합니다.<br>
+                                                    타겟 사용자 분석: 주요 사용자 그룹의 특성, 행동 패턴, 선호도 등을 분석합니다.<br><br>
+                                                    <hr>
+                                                    <strong>2. 정보 구조 설계</strong><br>
+                                                    <hr>
+                                                    사이트맵: 웹사이트의 전체 구조를 나타내는 사이트맵을 작성하여 페이지 간의 관계를 정의합니다.<br>
+                                                    내비게이션 설계: 사용자가 쉽게 탐색할 수 있도록 메뉴와 내비게이션 시스템을 설계합니다.<br><br>
+                                                    <hr>
+                                                    <strong>3. 와이어프레임 및 프로토타입 제작</strong><br>
+                                                    <hr>
+                                                    와이어프레임: 각 페이지의 레이아웃을 간단하게 시각화한 스케치를 작성하여 주요 요소의 배치를 결정합니다.<br>
+                                                    프로토타입: 와이어프레임을 기반으로 한 동적인 프로토타입을 제작하여 사용자 흐름과 인터랙션을
+                                                    시뮬레이션합니다.<br><br>
+                                                    <hr>
+                                                    <strong>4. 시각 디자인</strong><br>
+                                                    <hr>
+                                                    디자인 시스템: 일관된 디자인을 유지하기 위한 색상, 폰트, 버튼 스타일 등의 디자인 가이드라인을 정의합니다.<br>
+                                                    UI 디자인: 최종적인 시각 디자인을 제작하여 각 요소의 상세한 디자인을 완성합니다.<br><br>
+                                                    <hr>
+                                                    <strong>5. 개발 및 테스트</strong><br>
+                                                    <hr>
+                                                    프론트엔드 개발: HTML, CSS, JavaScript 등을 사용하여 실제 웹 페이지를 개발합니다.<br>
+                                                    반응형 디자인: 다양한 디바이스에서 일관된 사용자 경험을 제공하기 위해 반응형 디자인을 구현합니다.<br>
+                                                    테스트: 다양한 브라우저와 디바이스에서 테스트를 진행하여 버그를 수정하고 최적화합니다.<br>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    2 화면 구현
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <div>
+                                        <table class="table">
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">설명</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    웹개발 화면 구현은 설계된 UI를 실제 웹 페이지로 만드는 과정입니다. <br>
+                                                    이 과정은 주로 프론트엔드 개발자가 담당합니다<br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">세부항목</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    <hr>
+                                                    <strong>1. HTML로 기본 구조 작성</strong><br>
+                                                    <hr>
+                                                    HTML (HyperText Markup Language): 웹 페이지의 기본 구조를 정의하는 마크업 언어입니다. 각
+                                                    페이지의 레이아웃과 콘텐츠를 작성합니다.<br><br>
+
+                                                    <hr>
+                                                    <strong>2. CSS로 스타일링</strong><br>
+                                                    <hr>
+                                                    CSS (Cascading Style Sheets): HTML 구조에 스타일을 적용하여 레이아웃, 색상, 폰트 등을
+                                                    정의합니다.<br><br>
+
+                                                    <hr>
+                                                    <strong>3. JavaScript로 동적 기능 추가</strong><br>
+                                                    <hr>
+                                                    JavaScript: 웹 페이지에 동적 기능을 추가합니다. 예를 들어, 버튼 클릭 이벤트 처리, 폼 검증, AJAX 요청
+                                                    등을 구현합니다.<br><br>
+                                                    <hr>
+                                                    <strong>4. 반응형 디자인 구현</strong><br>
+                                                    <hr>
+                                                    미디어 쿼리: CSS의 미디어 쿼리를 사용하여 다양한 화면 크기에 대응하는 스타일을 적용합니다.<br><br>
+                                                    <hr>
+                                                    <strong>5. 라이브러리 사용하기</strong><br>
+                                                    <hr>
+                                                    Bootstrap 이나 자바스크립트 라이브러리를 이용하여 보다 손쉽게 스타일링을 하거나 기능구현을 할수
+                                                    있습니다<br><br>
+                                                    <hr>
+                                                    <strong>6 테스트 및 디버깅</strong><br>
+                                                    <hr>
+                                                    Jest: JavaScript 코드의 유닛 테스트를 위한 프레임워크입니다.<br><br>
+                                                    <hr>
+                                                    <strong>7. 배포</strong><br>
+                                                    <hr>
+                                                    GitHub Pages: GitHub 저장소를 이용하여 웹 페이지를 호스팅할 수 있습니다.<br><br>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    3 데이터베이스
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <div>
+                                        <table class="table">
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">설명</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    웹 개발에서 데이터베이스 설계 및 구현은 데이터의 저장, 관리, 검색을 위해 중요한 과정입니다. <br>
+                                                    이 과정은 데이터베이스를 설계하고 실제로 구현하여 웹 애플리케이션과 통합하는 것을 포함합니다.<br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">세부항목</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    <p>
+                                                        <strong style="font-size : 1.5rem;">1 데이터베이스 설계</strong>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>1 요구사항 분석</strong><br>
+                                                        <hr>
+
+                                                        - 비즈니스 요구사항 수집: 데이터베이스가 지원해야 할 기능과 요구사항을 수집합니다.<br>
+                                                        - 데이터 요구 사항 수집: 저장해야 할 데이터의 종류, 속성, 관계 등을 정의합니다.<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>2 개념적 설계</strong><br>
+                                                        <hr>
+                                                        - ERD(Entity-Relationship Diagram): 엔티티, 속성, 관계를 시각적으로 표현하여 데이터
+                                                        구조를 설계합니다.<br>
+                                                        - 엔티티: 데이터베이스에서 저장할 주요 객체 (예: 사용자, 제품).<br>
+                                                        - 속성: 엔티티가 가지는 정보 (예: 사용자 이름, 제품 가격).<br>
+                                                        - 관계: 엔티티 간의 연관성 (예: 사용자가 주문을 합니다).<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>3 논리적 설계</strong><br>
+                                                        <hr>
+                                                        - 스키마 설계: ERD를 기반으로 데이터베이스 스키마를 작성합니다. 테이블, 컬럼, 데이터 타입 등을
+                                                        정의합니다.<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>4 물리적 설계</strong><br>
+                                                        <hr>
+                                                        - 인덱스 설계: 데이터 검색 속도를 높이기 위해 인덱스를 설계합니다.<br>
+                                                        - 파티셔닝: 큰 테이블을 물리적으로 분할하여 관리 효율성을 높입니다.<br>
+                                                        - 정규화와 반정규화: 데이터 중복을 줄이기 위해 정규화하고, 성능을 위해 필요한 경우
+                                                        반정규화합니다.<br><br>
+                                                    </p>
+                                                    </p>
+
+                                                    <strong style="font-size : 1.5rem;">2 데이터베이스 구현</strong><br>
+                                                    <p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>1 DBMS선택</strong><br>
+                                                        <hr>
+
+                                                        - 관계형 데이터베이스 (RDBMS): MySQL, PostgreSQL, Microsoft SQL Server,
+                                                        Oracle 등.<br>
+                                                        - NoSQL 데이터베이스: MongoDB, Cassandra, Redis 등.<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>2 데이터베이스 설치 및 설정</strong><br>
+                                                        <hr>
+
+                                                        - 선택한 DBMS를 설치하고 필요한 설정을 수행합니다.<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>3 스키마 작성 및 실행</strong><br>
+                                                        <hr>
+
+                                                        - 논리적 설계에서 작성한 SQL 스크립트를 사용하여 데이터베이스 스키마를 생성합니다.<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>4 데이터베이스 연결</strong><br>
+                                                        <hr>
+
+                                                        - 웹 애플리케이션에서 데이터베이스에 연결할 수 있도록 설정합니다.<br>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>5 CRUD구현</strong><br>
+                                                        <hr>
+                                                        - 웹 애플리케이션에서 데이터베이스에 데이터를 생성(Create), 읽기(Read), 업데이트(Update),
+                                                        삭제(Delete)할 수 있는 기능을 구현합니다.;<br>
+                                                    </p>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapse4">
+                                    4 서버프로그램 구현
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-heading4">
+                                <div class="accordion-body">
+
+                                    <div>
+                                        <table class="table">
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">설명</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    웹 개발에서 서버 프로그램은 클라이언트(사용자의 웹 브라우저)와 데이터베이스 사이에서 데이터를 처리하고 전송하는 역할을
+                                                    합니다.<br>
+                                                    서버 프로그램은 클라이언트 요청을 처리하고 적절한 응답을 제공하는 백엔드 애플리케이션입니다<br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">세부항목</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="" style="text-align:left;">
+
+                                                    <p>
+                                                        <hr>
+                                                        <strong>1 서버 사이드 언어 및 프레임워크</strong>
+                                                        <hr>
+                                                    <p>
+                                                        JavaScript/Node.js: Express.js, Koa.js, NestJS.<br>
+                                                        Python: Django, Flask, FastAPI.<br>
+                                                        Java: Spring Boot, Jakarta EE.<br>
+                                                        Ruby: Ruby on Rails.<br>
+                                                        PHP: Laravel, Symfony.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>2 웹 서버 소프트웨어</strong>
+                                                        <hr>
+                                                    <p>
+                                                        Apache: 오픈 소스 웹 서버 소프트웨어.<br>
+                                                        Nginx: 고성능 웹 서버 및 리버스 프록시 서버.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>3 데이터베이스</strong>
+                                                        <hr>
+                                                    <p>
+                                                        관계형 데이터베이스 (RDBMS): MySQL, PostgreSQL, SQLite, Oracle
+                                                        Database.<br>
+                                                        NoSQL 데이터베이스: MongoDB, Cassandra, Redis.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>4 API 설계 및 문서화 도구</strong>
+                                                        <hr>
+                                                    <p>
+                                                        Swagger: RESTful API 문서화 도구.<br>
+                                                        Postman: API 개발 및 테스트 도구.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>5 인증 및 권한 관리</strong>
+                                                        <hr>
+                                                    <p>
+                                                        OAuth: 인증 프로토콜, 예시: Google OAuth, GitHub OAuth.<br>
+                                                        JWT (JSON Web Token): 토큰 기반 인증 방식.<br>
+                                                        Passport.js: Node.js용 인증 미들웨어.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>6 배포 및 운영 도구</strong>
+                                                        <hr>
+                                                    <p>
+                                                        Docker: 컨테이너화 도구.<br>
+                                                        Kubernetes: 컨테이너 오케스트레이션 도구.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>7 CI/CD </strong>
+                                                        <hr>
+                                                    <p>
+                                                        도구: Jenkins, Travis CI, GitHub Actions.
+                                                    </p>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-heading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapse5">
+                                    5 통합 구현
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-heading5">
+                                <div class="accordion-body">
+
+                                    <div>
+                                        <table class="table">
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">설명</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    웹 개발 통합 구현은 프론트엔드, 백엔드, 데이터베이스, 그리고 기타 서비스들이 원활하게 상호작용할 수 있도록 통합하는
+                                                    과정을 의미합니다. <br>
+                                                    이 과정은 모든 구성 요소가 함께 작동하여 완전한 웹 애플리케이션을 구성하도록 합니다.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">세부항목</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="" style="text-align:left;">
+
+                                                    <p>
+                                                        <hr>
+                                                        <strong>1 프론트엔드와 백엔드 통합</strong>
+                                                        <hr>
+                                                    <p>
+                                                        프론트엔드 애플리케이션이 백엔드 API와 통신할 수 있도록 설정합니다.<br>
+                                                        일반적으로 RESTful API 또는 GraphQL을 사용하여 데이터를 주고받습니다.<br>
+                                                        프론트엔드에서 AJAX 또는 Fetch API를 사용하여 서버와 통신합니다.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>2 백엔드와 데이터베이스 통합</strong>
+                                                        <hr>
+                                                    <p>
+                                                        백엔드 애플리케이션이 데이터베이스와 연결되어 데이터를 저장하고 조회할 수 있도록 설정합니다.<br>
+                                                        데이터베이스 연결을 위한 라이브러리나 ORM(Object-Relational Mapping)을 사용합니다.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>3 서버 설정 및 배포</strong>
+                                                        <hr>
+                                                    <p>
+                                                        웹 서버(Apache, Nginx)와 애플리케이션 서버(Node.js, Django 등)를 설정하고 애플리케이션을
+                                                        배포합니다.<br>
+                                                        도커(Docker)와 같은 컨테이너화 도구를 사용하여 배포 환경을 표준화할 수 있습니다.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>4 CI/CD 설정</strong>
+                                                        <hr>
+                                                    <p>
+                                                        지속적 통합/지속적 배포(CI/CD) 파이프라인을 설정하여 코드 변경 사항이 자동으로 테스트되고 배포되도록
+                                                        합니다.<br>
+                                                        GitHub Actions, Jenkins, Travis CI 등을 사용하여 CI/CD 파이프라인을
+                                                        구성합니다.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>5 API 게이트웨이 및 마이크로서비스 통합 [구현중]</strong>
+                                                        <hr>
+                                                    <p>
+                                                        API 게이트웨이를 사용하여 마이크로서비스를 관리하고 통합합니다.<br>
+                                                        마이크로서비스 간의 통신을 위해 gRPC, 메시지 큐(RabbitMQ, Kafka) 등을 사용할 수
+                                                        있습니다.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>6 로깅 및 모니터링 [구현중]</strong>
+                                                        <hr>
+                                                    <p>
+                                                        애플리케이션의 상태와 성능을 모니터링하고 로깅 시스템을 설정합니다.<br>
+                                                        Prometheus, Grafana, ELK Stack(Elasticsearch, Logstash, Kibana)
+                                                        등을 사용하여 로깅 및 모니터링을 구현합니다.<br>
+                                                    </p>
+                                                    </p>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-heading6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapse6" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapse6">
+                                    5 테스트 및 배포
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-heading6">
+                                <div class="accordion-body">
+                                    <div>
+
+                                        <table class="table">
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">설명</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    웹 개발에서 테스트와 배포는 애플리케이션의 품질을 보장하고 최종 사용자가 사용할 수 있도록 만드는 중요한
+                                                    단계입니다.<br>
+                                                    이 단계는 개발된 기능을 확인하고, 버그를 발견하고, 최종 제품을 서버에 배포하여 사용자가 접근할 수 있도록
+                                                    합니다.<br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bg-secondary text-light" style="text-align:center;">세부항목</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="" style="text-align:left;">
+                                                    <strong style="font-size : 1.5rem">배포</strong>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>1 서버 설정</strong>
+                                                        <hr>
+                                                    <p>
+                                                        웹 서버(Apache, Nginx) 및 애플리케이션 서버(Node.js, Django 등)를 설정합니다.<br>
+                                                        보안 설정(SSL/TLS), 도메인 네임 설정 등을 포함합니다<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>2 컨테이너화</strong>
+                                                        <hr>
+                                                    <p>
+                                                        Docker와 같은 도구를 사용하여 애플리케이션을 컨테이너화하여 배포합니다.<br>
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>3 클라우드 서비스 배포</strong>
+                                                        <hr>
+                                                    <p>
+                                                        클라우드 서비스(AWS, Azure, Google Cloud)에서 애플리케이션을 배포합니다.
+                                                    </p>
+                                                    </p>
+                                                    <p>
+                                                        <hr>
+                                                        <strong>4 지속적 배포(CD)</strong>
+                                                        <hr>
+                                                    <p>
+                                                        CI/CD 파이프라인을 사용하여 애플리케이션을 자동으로 배포합니다.
+                                                    </p>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 세부정보확인(정보처리산업기사 과정평가형) -->
+                <h5 id="tag6">세부과정확인 (정보처리산업기사 과정평가형)</h5>
+                <div class="curriculum">
+                    <div class="left" style="width:70%;height:800px;">
+                        <div class="info">
+                            <div>
+                                <div
+                                    style="padding-left:5px;height:35px;line-height:35px;background-color: black;color:white;margin-bottom:5px;">
+                                    정보처리산업기사란</div>
+                                <div>
+                                    정보처리산업기사 자격증은 정보 기술(IT) 분야에서 중요한 자격증 중 하나로,<br>
+                                    정보 시스템의 설계, 개발, 운영 및 유지보수에 필요한 지식과 기술을 인증합니다
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    style="padding-left:5px;height:35px;line-height:35px;background-color: black;color:white;margin-bottom:5px;">
+                                    정보처리산업기사 과정평가형이란
+                                    <a style="border:1px solid white;font-size:.7rem; color:white;" target="_blank"
+                                        href="https://c.q-net.or.kr/cmn/info/comContentsPage.do?contentsId=A10B10C10">바로가기</a>
+                                </div>
+                                <div>
+                                    정보처리산업기사 과정평가형 자격제도는 기존의 시험 위주의 검정형과는 다르게, <br>
+                                    교육과정을 이수하고 평가를 통해 자격증을 취득하는 방식입니다. <br>
+                                    이는 현장 중심의 실무 능력을 중점적으로 평가하고 양성하기 위한 제도입니다<br>
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    style="padding-left:5px;height:35px;line-height:35px;background-color: black;color:white;margin-bottom:5px;">
+                                    정리표
+                                    <a style="border:1px solid white;font-size:.7rem; color:white;" target="_blank"
+                                        href="https://c.q-net.or.kr/cbq/introduce/examMethInfoList.do">점수비율 확인 바로가기</a>
+                                </div>
+                                <div>
+                                    <table class="table w-100">
+                                        <tr>
+                                            <th class=""></th>
+                                            <th class="bg-dark text-light">내부평가</th>
+                                            <th class="bg-dark text-light">외부평가 필기</th>
+                                            <th class="bg-dark text-light">외부평가 실기</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-secondary text-light">전체 점수 비율</td>
+                                            <td>50%</td>
+                                            <td colspan=2>50%</td>
+                                            <!-- <td>1</td> -->
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-secondary text-light">세부 점수 비율</td>
+                                            <td>50%</td>
+                                            <td>40%</td>
+                                            <td>60%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-secondary text-light"><br>시험조건</td>
+                                            <td>
+                                                <br>
+                                                국비출석율에 따라
+                                            </td>
+                                            <td colspan="2">
+                                                내부평가 평균 60이상<br>
+                                                75%이상 출석<br>
+                                                모든 내부평가 응시
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="bg-secondary text-light">합격조건</td>
+                                            <td colspan="3">
+                                                내부평가와 외부평가의 비율을 50:50로 반영한 평균점수가 80점 이상이 되면 합격자
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="bg-secondary text-light">시험방식</td>
+                                            <td>NCS모듈검정</td>
+                                            <td>지필</td>
+                                            <td>미정(보통 웹 제작)</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="bg-secondary text-light">평가시간</td>
+                                            <td>-</td>
+                                            <td>90분</td>
+                                            <td>5시간</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bg-secondary text-light"><br>문제유형</td>
+                                            <td>
+                                                포트폴리오<br>
+                                                문제해결 시나리오<br>
+                                                평가자 체크리스트<br>
+                                            </td>
+                                            <td>
+                                                총 40문제<br>
+                                                (0, X 및 객관식 : 30문제, 주관식 : 10문제)
+                                            </td>
+                                            <td>
+                                                0점이상
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="bg-secondary text-light"><br>참고링크</td>
+                                            <td colspan=3>
+                                                <a style="font-size:.8rem;"
+                                                    href="https://c.q-net.or.kr/cbq/introduce/faq.do">자주하는 질문(CQ-NET
+                                                    FAQ)</a><br>
+                                                <a style="font-size:.8rem;" target="_blank"
+                                                    href="https://www.youtube.com/watch?v=ZMEx-VzSmnQ">외부평가 실기
+                                                    유튜브</a><br>
+                                                <a style="font-size:.8rem" target="_blank"
+                                                    href="http://naver.me/5BcScFSA">외부평가실기문제 풀이-투표(2022)</a><br>
+                                                <a style="font-size:.8rem" target="_blank"
+                                                    href="http://naver.me/x0UmUAUX">외부평가실기문제 풀이-쇼핑몰(2022)</a>
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right" style="width:75%; ;">
+                        <div
+                            style="padding-left:5px;height:35px;line-height:35px;background-color:black;color:white;margin-bottom:5px;">
+                            정보처리산업기사 과정평가형 NCS모듈</div>
+                        <table class="table w-100">
+                            <tr>
+                                <th>능력단위명</th>
+                                <th>설명</th>
+                                <!-- <th>능력평가 형태</th> -->
+                            </tr>
+                            <tr>
+
+                                <td>문제해결능력</td>
+                                <td>업무 수행 중 발생하는 문제를 분석하고 해결하기 위한 논리적 사고 능력을 배양</td>
+
+                            </tr>
+                            <tr>
+
+                                <td>응용SW 기초 기술 활용</td>
+                                <td>
+                                    소프트웨어 개발에 필요한 기본 기술을 습득합니다.<br>
+                                    (네트워크,시스템,기본적인 프로그래밍 기법 등)
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>개발자 환경 구축</td>
+                                <td>
+                                    소프트웨어 개발 환경을 구축하는 방법을 학습합니다. <br>
+                                    IDE 설치 및 설정, 버전 관리 시스템 활용, 기본적인 개발 도구 사용법 등
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>화면 설계</td>
+                                <td>
+                                    사용자 인터페이스(UI) 설계를 위한 원리와 기법을 학습합니다. <br>
+                                    와이어프레임, 프로토타입 제작, UX/UI 디자인 원칙 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>화면 구현</td>
+                                <td>
+                                    설계된 UI를 실제 웹 페이지나 애플리케이션 화면으로 구현하는 방법을 학습합니다.<br>
+                                    HTML, CSS, JavaScript 등을 사용
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>UI 테스트</td>
+                                <td>
+                                    구현된 UI의 기능과 사용성을 테스트하는 방법을 학습합니다.<br>
+                                    테스트 케이스 작성, 자동화 테스트 도구 활용, 사용자 테스트 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>프로그래밍 언어 활용</td>
+                                <td>
+                                    특정 프로그래밍 언어를 활용하여 프로그램을 작성하는 능력을 배웁니다.<br>
+                                    변수, 조건문, 반복문 등 기본 문법과 응용 방법을 학습
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>프로그래밍 언어 응용</td>
+                                <td>
+                                    프로그래밍 언어의 고급 기능을 활용하여 복잡한 프로그램을 작성하는 능력을 배양합니다.<br>
+                                    객체지향 프로그래밍, 디자인 패턴 등을 학습
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>데이터 입출력 구현</td>
+                                <td>
+                                    데이터베이스의 데이터를 효율적으로 입출력하는 방법을 학습합니다.<br>
+                                    데이터베이스 연결, CRUD 작업, 데이터 모델링 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>SQL활용</td>
+                                <td>
+                                    SQL을 사용하여 데이터베이스를 관리하고 활용하는 능력을 배양합니다.<br>
+                                    데이터 조회, 삽입, 갱신, 삭제와 같은 SQL 쿼리 작성 및 최적화를 학습
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>요구사항 확인</td>
+                                <td>
+                                    소프트웨어 개발 프로젝트의 요구사항을 수집하고 분석하는 방법을 학습합니다.<br>
+                                    요구사항 명세서 작성, 이해관계자 인터뷰, 요구사항 추적 등을 포함
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>서버프로그램 구현</td>
+                                <td>
+                                    서버 측 프로그램을 작성하고 운영하는 방법을 학습합니다.<br>
+                                    서버 아키텍처, RESTful API, 데이터베이스 연동 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>통합 구현</td>
+                                <td>
+                                    다양한 시스템과 서비스를 통합하여 하나의 완성된 시스템을 구현하는 방법을 학습합니다.<br>
+                                    API 통합, 데이터 통합, 시스템 연계 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>애플리케이션 테스트 수행</td>
+                                <td>
+                                    발된 애플리케이션의 기능과 성능을 테스트하는 방법을 학습합니다.<br>
+                                    단위 테스트, 통합 테스트, 시스템 테스트, 성능 테스트 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>애플리케이션 배포</td>
+                                <td>
+                                    완성된 애플리케이션을 운영 환경에 배포하는 방법을 학습합니다.<br>
+                                    배포 자동화, CI/CD 파이프라인, 배포 후 모니터링 등
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>애플리케이션 테스트 관리</td>
+                                <td>
+                                    테스트 과정을 관리하고 유지보수하는 방법을 학습합니다.<br>
+                                    테스트 계획 수립, 테스트 도구 활용, 버그 추적 및 관리 등
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- 주의사항 -->
+                <h5 id="tag7">주의사항</h5>
+                <div class="warning-info">
+                    <ul style="">
+
+                        <li><span style="color:green">[환경]</span> 자리는 몇개의 모듈평가단위 이후에 바뀝니다(랜덤) - 동료/멤버 찾기 기간 </li>
+                        <li><span style="color:green">[환경]</span> 문제나 고민이 있으면 '강사'에게 먼저 말해주세요. 빠르게 조치/해결합니다.</li>
+                        <li><span style="color:green">[환경]</span> 항상 수업시작/종료시 정리정돈 부탁합니다.</li>
+                        <li><span style="color:green">[환경]</span> 불필요한 신체적 접촉 금지</li>
+                        <li><span style="color:green">[환경]</span> 쉬는 시간 10분 / 수업 50분 입니다(유동적)</li>
+                        <li><span style="color:green">[환경]</span> 흡연은 옥상 or 건물지하주차장 근처에서 하시면됩니다.</li>
+                        <li><span style="color:green">[환경]</span> 점심맛집 추천러 입니다. 물어보세요 ㅋ 서로 공유합니다. 도시락싸오신분은 강의장에서 드시면
+                            됩니다.</li>
+                        <li><span style="color:green">[환경]</span> 기본 단톡방을 만들고 관련 자료 공지합니다. 수업수료이후 6개월간 유지됩니다</li>
+                        <li><span style="color:green">[환경]</span> 스터디 방은 선택적으로 운영합니다.</li>
+
+
+                        <li>
+                            <hr>
+                        </li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 조장님은 고정 / 조원들은 계속 바뀔겁니다. 일정시간 이후 협의하에 조는 고정으로 지정
+                            될수도 있습니다</li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 프로젝트 인원구성은 조장 1명 조원3명 구조가 기본입니다</li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 조원간의 불화는 생길수 있으나 참으면서 감정적 소모 하지마세요. 문제 생기면 본인 혹은
+                            주변에서 꼭 알려주세요</li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 프로젝트는 기본 팀단위입니다(개별로도 가능합니다. 따로 말씀해주시면 바로 개별프로젝트
+                            형(+a 강사)으로 수업 진행합니다)</li>
+                        <li>
+                            <hr>
+                        </li>
+
+                        <li><span style="color:red">[태도]</span> 오늘했던 공부내용은 꼭 오늘 기록합니다.(GITHUB or NOTION or ETC..)</li>
+                        <li><span style="color:red">[태도]</span> 수업시간 엄수 - 기본중의 기본 , 회사라고 생각하고 바이오리듬 맞춥니다</li>
+                        <li><span style="color:red">[태도]</span> 인사 기본 - 기본중의 기본 </li>
+                        <li><span style="color:red">[태도]</span> 이타적 성향 한 스푼<br>(옆에있는 학생이 나중에 나를 도와줄 동료가 됩니다.못따라가거나 모르는거
+                            있으면 알려주세요. 본인공부에 도움도 됩니다)<br></li>
+                        <br>
+                        <li>
+                            <span style="color:red">[태도]</span> 조금 더 많이 알고있다고 잘난척, 모른다고 주눅들지 마세요. 인강/학원에서 배웠다하더라도 다똑같은
+                            신입레벨입니다.<br>
+                            혹여나 많이 안다고 하더라도 기본적인 인성/태도적인 문제가 있으면 치명적인 결격사유가 됩니다(회사든 어떤 환경이든..)
+
+                        </li>
+                        <br>
+                        <li><span style="color:red">[태도]</span>
+                            질문 얼마든지 환영입니다. 단 포괄적인 질문은 강사를 힘들게 합니다<br>
+
+                            <div style="width : 100%;display:flex;justify-content: left;gap : 30px;margin : 20px 0;">
+                                <div style="border : 1px solid lightgray;padding : 10px;">
+                                    <strong>잘못된 예시 : </strong><br>
+                                    <hr>
+                                    학생 : 모르겠어요<br>
+                                    강사 : 뭘모를까요?<br>
+                                    학생 : 그냥 다요<br>
+                                    강사 : ...<br>
+                                </div>
+                                <div style="border : 1px solid lightgray;padding : 10px;">
+                                    <strong>올바른 예시 : </strong><br>
+                                    <hr>
+                                    학생 : 자바Ch07 디자인패턴 중에 빌더패턴 코드가 이해가 안되서 <br>
+                                    학생 : 구글링 / 유튜브 등으로 찾아서 봤는데 제가 그래서 이해한부분은<br>
+                                    학생 : 여기까진데 그다음 코드나 개념은 모르겠어요(보여준다 - GOOD)<br>
+                                    강사 : 오케이 - !
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><span style="color:red">[태도]</span> 말한마디가 천냥...말 함부로 하지 맙시다.(위와 동일선상.. 강사-학생, 학생-학원직원,
+                            학생-학생)</li>
+                        <li><span style="color:red">[태도]</span> 간절함/절실함으로 임하세요. 애매하게 놀러왔다면 다른사람에게 피해주는겁니다</li>
+
+
+                    </ul>
+                </div>
+                <!-- QNA -->
+                <h5 id="tag8">QnA</h5>
+                <div class="qna" style=" display:flex;justify-content: center;;">
+                    <img style="object-fit: contain;width:50%;height:50%;" src="course/img/qna.jpg" alt="">
+                </div>
+
+                <!-- 자기소개 -->
+                <h5 id="tag9">자기소개</h5>
+                <div class="my" style="display:flex;align-items: center;flex-direction: column;">
+                    <h3>이름</h3>
+                    <h3>나이</hh34>
+                        <h3>MBTI / 모르면 혈액형ㅋ</h3>
+                        <h3>사는곳</h3>
+                        <h3>취미 / 특기</h3>
+                        <h3>목표 자격증</h3>
+                        <h3>앞으로의 각오</h3>
+                        <h3>기타</h3>
+                </div>
+                <div style="width:100%;height:500px;">
+
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

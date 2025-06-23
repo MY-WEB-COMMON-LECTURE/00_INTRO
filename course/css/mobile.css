@@ -1,0 +1,11 @@
+table td div:nth-child(1)
+{
+    border: 1px solid;margin-bottom:5px;
+}
+table td div:nth-child(2)
+{
+    max-width:80px !important;
+}
+table td div:nth-child(2) img{
+    max-width:80px;;height:100%;object-fit:cover;
+}   

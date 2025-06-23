@@ -22,7 +22,7 @@
   "2025-2": {
     "id": "2025-2",
     "type": "image",
-    "list":[],
+    "list":["img/project/modal/2025-2/01.gif","img/project/modal/2025-2/02.gif","img/project/modal/2025-2/03.gif","img/project/modal/2025-2/04.gif"],
     "content": "img/project/calendar/01.png"
   },
 
@@ -30,6 +30,6 @@
     "id": "2025-3",
     "type": "text",
     "list":[],
-    "content": "가계부 웹앱 시스템은 SMS를 활용한 소비내역 자동 업데이트 기능을 제공하는 혁신적인 가계부 관리 시스템입니다. 사용자의 카드 사용 내역을 SMS로 수신하여 자동으로 분류하고 기록하며, 지출 패턴을 분석하여 맞춤형 절약 방안을 제시합니다. 또한 예산 설정 및 관리, 지출 리포트 생성, 목표 달성 현황 추적 등 다양한 기능을 제공합니다."
+    "content": "제작중입니다 - !"
   }
 }
