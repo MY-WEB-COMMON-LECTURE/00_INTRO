@@ -115,6 +115,7 @@
                 <li class=""><a href="#section3">SKILLS</a></li>
                 <li><a href="#section4">COURSE</a></li>
                 <li><a href="#section5">PROJECTS</a></li>
+                <li><a href="#student-projects">STUDENT_PROJECTS</a></li>
                 <li class="last"><a href="#section6">CONTACT</a></li>
             </ul>
         </div>
@@ -129,6 +130,7 @@
             <li><a href="#section3" title="Skills"> <span class="material-symbols-outlined">code</span></a></li>
             <li><a href="#section4" title="Course"> <span class="material-symbols-outlined">school</span></a></li>
             <li><a href="#section5" title="Projects"> <span class="material-symbols-outlined">folder</span></a></li>
+            <li><a href="#student-projects" title="Student Projects"> <span class="material-symbols-outlined">groups</span></a></li>
             <li><a href="#section6" title="Contact"> <span class="material-symbols-outlined">phone</span></a></li>
         </ul>
     </nav>
@@ -834,7 +836,7 @@
                 <div class="box_wrap">
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
-                            <img src="img/course1.png" alt="정보처리산업기사 취득과정">
+                            <!-- <img src="img/course1.png" alt="정보처리산업기사 취득과정"> -->
                         </div>
                         <span>정보처리산업기사 취득과정</span>
                         <p>IT 실무와 자격증 취득을 동시에 준비하는 과정</p>
@@ -842,7 +844,7 @@
                     </div>
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
-                            <img src="img/course2.png" alt="임베디드 소프트웨어 융합 풀스택 개발자 양성과정">
+                            <!-- <img src="img/course2.png" alt="임베디드 소프트웨어 융합 풀스택 개발자 양성과정"> -->
                         </div>
                         <span>임베디드 소프트웨어 융합 풀스택 개발자 양성과정</span>
                         <p>임베디드와 웹, 앱까지 아우르는 융합형 풀스택 개발자 양성</p>
@@ -850,7 +852,7 @@
                     </div>
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
-                            <img src="img/course3.png" alt="자바백엔드 개발자 양성과정">
+                            <!-- <img src="img/course3.png" alt="자바백엔드 개발자 양성과정"> -->
                         </div>
                         <span>자바백엔드 개발자 양성과정</span>
                         <p>자바 기반의 백엔드 실무 개발자 양성</p>
@@ -858,7 +860,7 @@
                     </div>
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
-                            <img src="img/course4.png" alt="자바를 활용한 웹 개발자 양성 과정">
+                            <!-- <img src="img/course4.png" alt="자바를 활용한 웹 개발자 양성 과정"> -->
                         </div>
                         <span>자바를 활용한 웹 개발자 양성 과정</span>
                         <p>자바와 웹 기술을 활용한 실무 중심의 웹 개발자 과정</p>
@@ -866,7 +868,7 @@
                     </div>
                     <div class="p_box item" data-aos="fade-up">
                         <div class="img_box">
-                            <img src="img/course5.png" alt="빅데이터 UI전문가 양성과정">
+                            <!-- <img src="img/course5.png" alt="빅데이터 UI전문가 양성과정"> -->
                         </div>
                         <span>빅데이터 UI전문가 양성과정</span>
                         <p>빅데이터와 UI 기술을 융합한 전문가 양성</p>
@@ -888,12 +890,31 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Student Projects -->
+        <div id="student-projects">
+            <div class="container2">
+                <h3 id="section2H3">STUDENT PROJECTS</h3>
+                <div id="student-projects-container">
+                    <!-- Student Projects will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Project Modal -->
+        <div id="studentProjectModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="studentModalTitle"></h2>
+                <div id="studentModalContent"></div>
+            </div>
+        </div>
+
+        <!-- Project Modal -->
         <div id="projectModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h2 id="modalTitle"></h2>
-                <p id="modalDescription"></p>
+                <div id="modalContent"></div>
             </div>
         </div>
 
@@ -995,7 +1016,6 @@
 
             // 모달 기능
             const modal = document.getElementById('projectModal');
-            const closeBtn = document.getElementsByClassName('close')[0];
 
             // 모달 열기
             async function openModal(projectId) {
@@ -1005,31 +1025,39 @@
                     const content = modalContents[projectId];
 
                     if (content) {
-                        const modalContent = document.querySelector('.modal-content');
-                        modalContent.innerHTML = `
-                            <span class="close">&times;</span>
-                            <h2 id="modalTitle">${content.title || ''}</h2>
-                            <div id="modalContent"></div>
-                        `;
+                        const modalContent = document.querySelector('#projectModal .modal-content');
+                        
+                        if (modalContent) {
+                            modalContent.innerHTML = `
+                                <span class="close">&times;</span>
+                                <h2 id="modalTitle">${content.title || ''}</h2>
+                                <div id="modalContent"></div>
+                            `;
 
-                        const modalContentDiv = document.getElementById('modalContent');
+                            const modalContentDiv = document.getElementById('modalContent');
 
-                        if (content.type === 'image' && content.list && content.list.length > 0) {
-                            content.list.forEach(imagePath => {
-                                const img = document.createElement('img');
-                                img.src = imagePath;
-                                img.style.width = '100%';
-                                img.style.marginBottom = '20px';
-                                modalContentDiv.appendChild(img);
-                            });
+                            if (content.type === 'image' && content.list && content.list.length > 0) {
+                                content.list.forEach(imagePath => {
+                                    const img = document.createElement('img');
+                                    img.src = imagePath;
+                                    img.style.width = '100%';
+                                    img.style.marginBottom = '20px';
+                                    modalContentDiv.appendChild(img);
+                                });
+                            } else {
+                                modalContentDiv.innerHTML = content.content;
+                            }
+
+                            // 닫기 버튼 이벤트 리스너 재설정
+                            const newCloseBtn = modalContent.querySelector('.close');
+                            if (newCloseBtn) {
+                                newCloseBtn.onclick = function () {
+                                    modal.style.display = "none";
+                                }
+                            }
                         } else {
-                            modalContentDiv.innerHTML = content.content;
-                        }
-
-                        // 닫기 버튼 이벤트 리스너 재설정
-                        const newCloseBtn = modalContent.querySelector('.close');
-                        newCloseBtn.onclick = function () {
-                            modal.style.display = "none";
+                            console.error('Modal content element not found');
+                            return;
                         }
                     }
 
@@ -1039,11 +1067,6 @@
                 }
             }
 
-            // 모달 닫기 버튼 클릭 이벤트
-            closeBtn.onclick = function () {
-                modal.style.display = "none";
-            }
-
             // 모달 외부 클릭시 닫기
             window.onclick = function (event) {
                 if (event.target == modal) {
@@ -1051,6 +1074,9 @@
                 }
                 if (event.target == ncsModal) {
                     ncsModal.style.display = "none";
+                }
+                if (event.target == studentProjectModal) {
+                    studentProjectModal.style.display = "none";
                 }
             }
 
@@ -1084,6 +1110,149 @@
                 }
 
                 ncsModal.style.display = "block";
+            }
+
+            // Student Projects 데이터 로드 및 표시
+            fetch('dataset/student_projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('student-projects-container');
+
+                    // JSON 파일의 순서대로 표시 (정렬하지 않음)
+                    Object.keys(data).forEach(year => {
+                        // 연도별 섹션 생성
+                        const yearDiv = document.createElement('div');
+                        yearDiv.className = 'year-section';
+                        yearDiv.innerHTML = `
+                            <h4 style="font-size: 1.6rem; font-weight: 700; margin-top: 0; margin-bottom: -30px; text-align: left; padding-left:15px;border-left: 5px solid darkcyan; color: darkgray;">
+                                ${year}
+                            </h4>
+                            <div class="box_wrap">
+                        `;
+
+                        // 해당 연도의 프로젝트 추가
+                        data[year].forEach(project => {
+                            const link = project.type === "MODAL" ? "javascript:void(0)" : project.link;
+                            const onClick = project.type === "MODAL" ? `onclick="openStudentModal('${project.id}'); return false;"` : "";
+                            const target = project.type === "MODAL" ? "" : "target='_blank'";
+
+                            yearDiv.querySelector('.box_wrap').innerHTML += `
+                                <div class="p_box item" data-aos="fade-up" id="student-project-${project.id}">
+                                    <div class="img_box">
+                                        <a href="${link}" ${onClick}><img src="${project.image}" alt="${project.title}"></a>
+                                        <div class="overlay">
+                                            <a class="info" href="${link}" ${onClick} ${target}>${project.type === "MODAL" ? "자세히 보기" : "Site 바로가기"}</a>
+                                        </div>
+                                    </div>
+                                    <span>${project.title}</span>
+                                    <p>${project.description}</p>
+                                </div>
+                            `;
+                        });
+
+                        yearDiv.querySelector('.box_wrap').innerHTML += '</div>';
+                        container.appendChild(yearDiv);
+                    });
+                })
+                .catch(error => console.error('Student Projects 로드 중 오류 발생:', error));
+
+            // Student Project 모달 기능
+            const studentProjectModal = document.getElementById('studentProjectModal');
+
+            // Student Project 모달 열기
+            async function openStudentModal(projectId) {
+                try {
+                    console.log('Opening modal for project:', projectId);
+                    const response = await fetch('dataset/student_project_modal_contents.json?t=' + Date.now());
+                    const modalContents = await response.json();
+                    const content = modalContents[projectId];
+
+                    if (content) {
+                        console.log('Content found for project:', projectId, content);
+                        const modalContent = document.querySelector('#studentProjectModal .modal-content');
+                        
+                        // 모달 내용을 완전히 초기화
+                        modalContent.innerHTML = `
+                            <span class="close">&times;</span>
+                            <h2 id="studentModalTitle">${content.title || ''}</h2>
+                            <div id="studentModalContent"></div>
+                        `;
+
+                        const studentModalContentDiv = document.getElementById('studentModalContent');
+                        
+                        // 기존 내용 완전히 제거
+                        studentModalContentDiv.innerHTML = '';
+
+                        if (content.type === 'image' && content.list && content.list.length > 0) {
+                            content.list.forEach(imagePath => {
+                                const img = document.createElement('img');
+                                img.src = imagePath;
+                                img.style.width = '100%';
+                                img.style.marginBottom = '20px';
+                                studentModalContentDiv.appendChild(img);
+                            });
+                        } else if (content.type === 'text' && content.list && content.list.length > 0) {
+                            // 비디오 표시
+                            content.list.forEach((videoPath, index) => {
+                                console.log(`Loading video ${index} for project ${projectId}:`, videoPath);
+                                const video = document.createElement('iframe');
+                                
+                                // YouTube URL을 임베드 형식으로 변환
+                                let embedUrl = videoPath;
+                                if (videoPath && (videoPath.includes('youtube.com') || videoPath.includes('youtu.be'))) {
+                                    // YouTube URL 처리
+                                    let videoId = '';
+                                    if (videoPath.includes('youtube.com/watch?v=')) {
+                                        videoId = videoPath.split('v=')[1];
+                                        // URL 파라미터 제거
+                                        if (videoId.includes('&')) {
+                                            videoId = videoId.split('&')[0];
+                                        }
+                                    } else if (videoPath.includes('youtu.be/')) {
+                                        videoId = videoPath.split('youtu.be/')[1];
+                                        // URL 파라미터 제거
+                                        if (videoId.includes('?')) {
+                                            videoId = videoId.split('?')[0];
+                                        }
+                                    }
+                                    if (videoId) {
+                                        embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+                                        console.log(`Project ${projectId}: Converted ${videoPath} to embed URL:`, embedUrl);
+                                    }
+                                }
+                                
+                                video.src = embedUrl;
+                                video.style.width = '100%';
+                                video.style.height = '80vh';
+                                video.style.border = 'none';
+                                video.style.marginBottom = '20px';
+                                video.allowFullscreen = true;
+                                video.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                                studentModalContentDiv.appendChild(video);
+                            });
+                            
+                            // 텍스트 내용도 추가
+                            if (content.content) {
+                                const textDiv = document.createElement('div');
+                                textDiv.innerHTML = content.content;
+                                textDiv.style.marginTop = '20px';
+                                studentModalContentDiv.appendChild(textDiv);
+                            }
+                        } else {
+                            studentModalContentDiv.innerHTML = content.content;
+                        }
+
+                        // 닫기 버튼 이벤트 리스너 재설정
+                        const newCloseBtn = modalContent.querySelector('.close');
+                        newCloseBtn.onclick = function () {
+                            studentProjectModal.style.display = "none";
+                        }
+                    }
+
+                    studentProjectModal.style.display = "block";
+                } catch (error) {
+                    console.error('Student Project 모달 콘텐츠 로드 중 오류 발생:', error);
+                }
             }
 
         </script>

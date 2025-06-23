@@ -808,7 +808,7 @@ section{
 
 }
 
-#section2 h3, #section3 h3, #section4 h3 {
+#section2 h3, #section3 h3, #section4 h3 ,#student-projects h3{
     text-align: center;
     font-size: 2.2rem;
     color: #333c60;
@@ -819,19 +819,20 @@ section{
     position: relative;
     top:50px;
     z-index: 3000;
+    
 }
 
-#section2 h3:after, #section3 h3:after, #section4 h3:after #section5 h3:after{
+#section2 h3:after, #section3 h3:after, #section4 h3:after #section5 h3:after,#student-projects h3:after{
     content: '';
     display: block;
-    width: 120px;
+  
     height: 2px;
     background: darkcyan;
     margin: 16px auto 0 auto;
     border-radius: 2px;
 }
 
-#section2 .box_wrap, #section3 .box_wrap, #section4 .box_wrap {
+#section2 .box_wrap, #section3 .box_wrap, #section4 .box_wrap ,#student-projects .box_wrap{
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -1084,12 +1085,17 @@ footer address{
 }
 
 #section6 .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-top: 80px;
     padding-bottom: 20px;
+    max-width: 1200px;
+    /* flex-wrap: wrap;
+    justify-content: left;
+    gap: 32px;
+    margin-top: 80px;
+    padding-bottom: 20px; */
 }
 
 #section6 .contact-item {
@@ -1273,4 +1279,31 @@ footer address{
     cursor:pointer;
     color:darkcyan;
     z-index:10000;
+}
+#student-projects {
+    position:relative;
+    
+}
+#student-projects .container2{
+    width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    padding-bottom: 50px;
+}
+
+#student-projects-container{
+    position:relative;
+    top:80px;
+}
+
+#studentProjectModal .modal-content{
+    min-width:95vw;
+    max-height : 95vh;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin : auto;
+    overflow-y: auto;
 }
