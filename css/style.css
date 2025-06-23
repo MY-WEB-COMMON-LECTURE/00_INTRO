@@ -1248,7 +1248,8 @@ footer address{
     margin : auto;
     border-radius: 0;
     overflow-y: auto;
-    padding : 0 !important;
+    padding : 10px !important;
+    
 }
 
 #section4 .img_box{

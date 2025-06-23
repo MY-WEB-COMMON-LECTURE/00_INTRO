@@ -1,11 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Document</title>
+
+
+
+
+    <style>
+       
+        * {
+            box-sizing: border-box;
+            font-size: clamp(.7rem, 1.3vw, 1rem);
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        h5,
+        h6 {
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: darkcyan;
+            color: white;
+            min-width: 250px;
+        }
+
+        h6 {
+            margin: 5px auto;
+        }
+
+        td,
+        th {
+
+            text-align: center;
+        }
+
+        .layout-150 {
+            /* padding : 0 150px; */
+        }
+
+        .table {
+            min-width: 250px;
+        }
+
+
+        /* 기본설정들 */
+        .wrapper {}
+
+        .wrapper>header {
+            height: 80px;
+            background-color: rgb(170, 168, 168);
+            ;
+        }
+
+        .wrapper>header>.top-header {}
+
+        .wrapper>header>nav {}
+
+        .wrapper>main {
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: start;
+            padding : 10px;
+        }
+
+        .wrapper>main>aside {
+            width: 5vw;
+            min-width: 35px;
+            height: auto;
+            border-radius: 3px;
+            padding: 5px;
+
+
+            position: fixed;
+            left: 1.2vw;
+            top: calc(50% - 170px);
+
+
+
+        }
+
+        .wrapper>main>aside>ul {
+            /* border : 1px solid; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            height: 100%;
+
+            position: relative;
+        }
+
+        .wrapper>main>aside>ul::before {
+
+            position: absolute;
+            left: 0;
+            top: -25px;
+            display: block;
+            width: 100%;
+            font-size: .8rem;
+            content: '🕖';
+            text-align: center;
+        }
+
+        .wrapper>main>aside>ul>li {
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background-color: darkcyan;
+
+            margin: 2px;
+            border-radius: 5px;
+
+        }
+
+        .wrapper>main>aside>ul>li>a {
+            font-size: .65rem;
+            color: white;
+        }
+
+        .wrapper>main>section {
+           width : 100%;
+
+        }
+
+        .wrapper>main>section>div {
+
+            margin-top: 10px;
+        }
+
+        .wrapper>footer {}
+
+
+
+
+
+
+        .intruduce {
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .intruduce>.profile-image {
+            /* border : 1px solid; */
+
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            border: 1px solid lightgray;
+            position: relative;
+
+
+
+
+        }
+
+        .intruduce>.profile-image img {
+
+            object-fit: contain;
+
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+
+        }
+
+        .intruduce>.content {
+            padding: 5px;
+            /* border : 1px solid; */
+
+            width: 100%;
+        }
+
+        table td div {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+
+        table td div:nth-child(1) {
+            margin-bottom: 7px;
+            font-size: clamp(.6rem, 1.3vw, 1rem);
+            box-shadow: 5px 5px 5px lightgray;
+        }
+
+        table td div:nth-child(2) {
+            max-width: 100%;
+            position: relative;
+        }
+
+        table td div:nth-child(2) img {
+            width: 100%;
+            height: 10vh;
+            object-fit: contain;
+            position: relative;
+            left: 0px;
+            top: 0;
+
+            margin: 0 auto;
+
+        }
+
+        .curriculum {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 10px;
+
+        }
+
+        .curriculum th,
+        .curriculum td {
+            text-align: left;
+            font-size: .8rem
+        }
+
+        .curriculum .left .info th,
+        .curriculum .left .info td {
+            text-align: center;
+            border: 1px solid lightgray;
+        }
+
+        .curriculum .left .info>div {
+            margin-bottom: 20px;
+
+        }
+
+        .warning-info li {
+            font-size: 1.5rem;
+
+
+        }
+
+        .warning-info li span {
+            font-size: 1.5rem;
+            font-weight: 800;
+
+        }
+
+        .my {
+            padding-top: 20px;
+
+        }
+
+        .my h3 {
+            margin: 20px;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>TEST5</h1>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+    <div class="wrapper">
+        <main class="">
+            
+           
+            <section>
+                <h5 id="tag1">과정설명</h5>
+                <div>
+
+                </div>
+                <!-- 핵심모듈 -->
+                <h5 id="tag5">모듈전체</h5>
+                <div>
+              
+
+                </div>
+
+
+                <!-- 세부정보확인(정보처리산업기사 과정평가형) -->
+                <h5 id="tag6">세부과정확인</h5>
+                <div class="curriculum">
+             
+
+                </div>
+
+                <!-- 주의사항 -->
+                <h5 id="tag7">주의사항</h5>
+                <div class="warning-info">
+                    <ul style="">
+                        <li><span style="color:green">[환경]</span> 자리는 몇개의 모듈평가단위 이후에 바뀝니다(랜덤) - 동료/멤버 찾기 기간 </li>
+                        <li><span style="color:green">[환경]</span> 문제나 고민이 있으면 '강사'에게 먼저 말해주세요. 빠르게 조치/해결합니다.</li>
+                        <li><span style="color:green">[환경]</span> 항상 수업시작/종료시 정리정돈 부탁합니다.</li>
+                        <li><span style="color:green">[환경]</span> 불필요한 신체적 접촉 금지</li>
+                        <li><span style="color:green">[환경]</span> 쉬는 시간 10분 / 수업 50분 입니다(유동적)</li>
+                        <li><span style="color:green">[환경]</span> 흡연은 옥상 or 건물지하주차장 근처에서 하시면됩니다.</li>
+                        <li><span style="color:green">[환경]</span> 점심맛집 추천러 입니다. 물어보세요 ㅋ 서로 공유합니다. 도시락싸오신분은 강의장에서 드시면
+                            됩니다.</li>
+                        <li><span style="color:green">[환경]</span> 기본 단톡방을 만들고 관련 자료 공지합니다. 수업수료이후 6개월간 유지됩니다</li>
+                        <li><span style="color:green">[환경]</span> 스터디 방은 선택적으로 운영합니다.</li>
+
+
+                        <li>
+                            <hr>
+                        </li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 조장님은 고정 / 조원들은 계속 바뀔겁니다. 일정시간 이후 협의하에 조는 고정으로 지정
+                            될수도 있습니다</li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 프로젝트 인원구성은 조장 1명 조원3명 구조가 기본입니다</li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 조원간의 불화는 생길수 있으나 참으면서 감정적 소모 하지마세요. 문제 생기면 본인 혹은
+                            주변에서 꼭 알려주세요</li>
+                        <li><span style="color:royalblue">[프로젝트]</span> 프로젝트는 기본 팀단위입니다(개별로도 가능합니다. 따로 말씀해주시면 바로 개별프로젝트
+                            형(+a 강사)으로 수업 진행합니다)</li>
+                        <li>
+                            <hr>
+                        </li>
+
+                        <li><span style="color:red">[태도]</span> 오늘했던 공부내용은 꼭 오늘 기록합니다.(GITHUB or NOTION or ETC..)</li>
+                        <li><span style="color:red">[태도]</span> 수업시간 엄수 - 기본중의 기본 , 회사라고 생각하고 바이오리듬 맞춥니다</li>
+                        <li><span style="color:red">[태도]</span> 인사 기본 - 기본중의 기본 </li>
+                        <li><span style="color:red">[태도]</span> 이타적 성향 한 스푼<br>(옆에있는 학생이 나중에 나를 도와줄 동료가 됩니다.못따라가거나 모르는거
+                            있으면 알려주세요. 본인공부에 도움도 됩니다)<br></li>
+                        <br>
+                        <li>
+                            <span style="color:red">[태도]</span> 조금 더 많이 알고있다고 잘난척, 모른다고 주눅들지 마세요. 인강/학원에서 배웠다하더라도 다똑같은
+                            신입레벨입니다.<br>
+                            혹여나 많이 안다고 하더라도 기본적인 인성/태도적인 문제가 있으면 치명적인 결격사유가 됩니다(회사든 어떤 환경이든..)
+
+                        </li>
+                        <br>
+                        <li><span style="color:red">[태도]</span>
+                            질문 얼마든지 환영입니다. 단 포괄적인 질문은 강사를 힘들게 합니다<br>
+
+                            <div style="width : 100%;display:flex;justify-content: left;gap : 30px;margin : 20px 0;">
+                                <div style="border : 1px solid lightgray;padding : 10px;">
+                                    <strong>잘못된 예시 : </strong><br>
+                                    <hr>
+                                    학생 : 모르겠어요<br>
+                                    강사 : 뭘모를까요?<br>
+                                    학생 : 그냥 다요<br>
+                                    강사 : ...<br>
+                                </div>
+                                <div style="border : 1px solid lightgray;padding : 10px;">
+                                    <strong>올바른 예시 : </strong><br>
+                                    <hr>
+                                    학생 : 자바Ch07 디자인패턴 중에 빌더패턴 코드가 이해가 안되서 <br>
+                                    학생 : 구글링 / 유튜브 등으로 찾아서 봤는데 제가 그래서 이해한부분은<br>
+                                    학생 : 여기까진데 그다음 코드나 개념은 모르겠어요(보여준다 - GOOD)<br>
+                                    강사 : 오케이 - !
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><span style="color:red">[태도]</span> 말한마디가 천냥...말 함부로 하지 맙시다.(위와 동일선상.. 강사-학생, 학생-학원직원,
+                            학생-학생)</li>
+                        <li><span style="color:red">[태도]</span> 간절함/절실함으로 임하세요. 애매하게 놀러왔다면 다른사람에게 피해주는겁니다</li>
+
+
+                    </ul>
+                </div>
+                <!-- QNA -->
+                <h5 id="tag8">QnA</h5>
+                <div class="qna" style=" display:flex;justify-content: center;;">
+                    <img style="object-fit: contain;width:50%;height:50%;" src="course/img/qna.jpg" alt="">
+                </div>
+
+                <!-- 자기소개 -->
+                <h5 id="tag9">자기소개</h5>
+                <div class="my" style="display:flex;align-items: center;flex-direction: column;">
+                    <h3>이름</h3>
+                    <h3>나이</hh34>
+                        <h3>MBTI / 모르면 혈액형ㅋ</h3>
+                        <h3>사는곳</h3>
+                        <h3>취미 / 특기</h3>
+                        <h3>목표 자격증</h3>
+                        <h3>앞으로의 각오</h3>
+                        <h3>기타</h3>
+                </div>
+                <div style="width:100%;height:500px;">
+
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>
