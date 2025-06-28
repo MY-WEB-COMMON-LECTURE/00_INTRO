@@ -5,39 +5,39 @@
       "title": "ArtsHub",
       "description": "음악관련 사업 펀딩페이지",
       "image": "img/student-project/2025/정보처리산업기사과정평가형/01.png",
-      "link": "",
-      "type": "MODAL"
+      "link": "https://naver.me/F5acXynZ",
+      "type": "LINK"
     },
     {
       "id": "2025-2",
       "title": "PlayMatch",
       "description": "취미가 맞는 사람 찾기",
       "image": "img/student-project/2025/정보처리산업기사과정평가형/02.png",
-      "link": "",
-      "type": "MODAL"
+      "link": "https://naver.me/xcA6WyxE",
+      "type": "LINK"
     },
     {
       "id": "2025-3",
       "title": "HealthyMe",
       "description": "설문조사형 성분분석 웹쇼핑몰",
       "image": "img/student-project/2025/정보처리산업기사과정평가형/03.png",
-      "link": "",
-      "type": "MODAL"
+      "link": "https://naver.me/xF2c9w1R",
+      "type": "LINK"
     },    
     {
       "id": "2025-4",
       "title": "PAW WALK",
       "description": "애견돌봄서비스",
       "image": "img/student-project/2025/정보처리산업기사과정평가형/04.png",
-      "link": "",
-      "type": "MODAL"
+      "link": "https://naver.me/G3PSLOjP",
+      "type": "LINK"
     },    {
       "id": "2025-5",
       "title": "Story, After",
       "description": "영화감상리뷰 커뮤니티",
       "image": "img/student-project/2025/정보처리산업기사과정평가형/05.png",
-      "link": "",
-      "type": "MODAL"
+      "link": "https://naver.me/xbjQp1WP",
+      "type": "LINK"
     }
 
   ],

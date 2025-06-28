@@ -1132,16 +1132,16 @@
 
                         // 해당 연도의 프로젝트 추가
                         data[year].forEach(project => {
-                            const link = project.type === "MODAL" ? "javascript:void(0)" : project.link;
+                            const link = project.type === "LINK" ? project.link : "javascript:void(0)";
                             const onClick = project.type === "MODAL" ? `onclick="openStudentModal('${project.id}'); return false;"` : "";
-                            const target = project.type === "MODAL" ? "" : "target='_blank'";
+                            const target = project.type === "LINK" ? "target='_blank'" : "";
 
                             yearDiv.querySelector('.box_wrap').innerHTML += `
                                 <div class="p_box item" data-aos="fade-up" id="student-project-${project.id}">
                                     <div class="img_box">
-                                        <a href="${link}" ${onClick}><img src="${project.image}" alt="${project.title}"></a>
+                                        <a href="${link}" ${onClick} ${target}><img src="${project.image}" alt="${project.title}"></a>
                                         <div class="overlay">
-                                            <a class="info" href="${link}" ${onClick} ${target}>${project.type === "MODAL" ? "자세히 보기" : "Site 바로가기"}</a>
+                                            <a class="info" href="${link}" ${onClick} ${target}>${project.type === "LINK" ? "Site 바로가기" : "자세히 보기"}</a>
                                         </div>
                                     </div>
                                     <span>${project.title}</span>
@@ -1219,6 +1219,9 @@
                                         embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
                                         console.log(`Project ${projectId}: Converted ${videoPath} to embed URL:`, embedUrl);
                                     }
+                                } else if (videoPath && videoPath.includes('naver.me')) {
+                                    // 네이버 링크는 직접 사용
+                                    embedUrl = videoPath;
                                 }
                                 
                                 video.src = embedUrl;
