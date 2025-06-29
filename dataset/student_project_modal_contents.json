@@ -29,5 +29,11 @@
     "type": "text",
     "list":["https://naver.me/xbjQp1WP"],
     "content": "업로드 - 예정"
+  },
+  "2024-1": {
+    "id": "2024-1",
+    "type": "image",
+    "list":["img/project/modal/2024-1/01.gif","img/project/modal/2024-1/02.gif"],
+    "content": ""
   }
 }

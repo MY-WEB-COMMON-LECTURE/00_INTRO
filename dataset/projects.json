@@ -105,6 +105,14 @@
       "image": "img/project/bn/2025-3.png",
       "link": "#",
       "type": "MODAL"
+    },
+    {
+      "id": "2025-3",
+      "title": "철도 작업자 위치추적 시스템",
+      "description": "현재 진행중",
+      "image": "img/boxbg.png",
+      "link": "#",
+      "type": "MODAL"
     }
   ]
 }

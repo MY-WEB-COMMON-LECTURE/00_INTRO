@@ -1307,3 +1307,7 @@ footer address{
     margin : auto;
     overflow-y: auto;
 }
+
+#studentModalContent img{
+    width:100% !important;
+}

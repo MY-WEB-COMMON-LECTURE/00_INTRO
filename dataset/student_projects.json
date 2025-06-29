@@ -41,12 +41,12 @@
     }
 
   ],
-  "2024 - ":[
+  "2024 - 정보처리산업기사과정평가형":[
     {
-      "id": "2025-1",
-      "title": "",
-      "description": "",
-      "image": "",
+      "id": "2024-1",
+      "title": "HandTrip",
+      "description": "일본 여행 웹사이트",
+      "image": "img/student-project/2024/정보처리산업기사과정평가형/01.png",
       "link": "",
       "type": "MODAL"
     }
